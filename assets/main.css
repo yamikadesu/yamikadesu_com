@@ -354,7 +354,7 @@ h1.style2, h2.style2, h3.style2, p.style2 {
 	font-family: 'Nothing You Could Do', cursive;
 	letter-spacing: 0.375rem;
 	width: calc(100% + 0.375rem);
-	font-size: 1em;
+	font-size: 0.875em;
 	line-height: 1.375;
 	font-weight: 400;
 	-webkit-text-stroke: 0.05em #E76492;
@@ -611,6 +611,77 @@ th {
 
 #table01 th:last-child, #table01 td:last-child {
 	padding-right: 0;
+}
+
+hr {
+	align-items: center;
+	border: 0;
+	display: flex;
+	justify-content: var(--flex-alignment);
+	min-height: 1rem;
+	padding: 0;
+	position: relative;
+	width: 100%;
+}
+
+hr:before {
+	content: '';
+}
+
+#divider08:before {
+	width: 1rem;
+	background-color: transparent;
+	height: 1px;
+	border-radius: 0px;
+}
+
+#divider03:before {
+	width: 100%;
+	background-color: transparent;
+	height: 1px;
+	border-radius: 0px;
+}
+
+#divider04:before {
+	width: 100%;
+	background-color: transparent;
+	height: 1px;
+	border-radius: 0px;
+}
+
+#divider09:before {
+	width: 100%;
+	background-color: transparent;
+	height: 1px;
+	border-radius: 0px;
+}
+
+#divider10:before {
+	width: 100%;
+	background-color: transparent;
+	height: 1px;
+	border-radius: 0px;
+}
+
+#divider07:before {
+	width: 100%;
+	background-color: transparent;
+	height: 1px;
+	border-radius: 0px;
+}
+
+#divider01:before {
+	width: 100%;
+	background-color: transparent;
+	height: 1px;
+	border-radius: 0px;
+}
+
+#divider02:before {
+	width: 100%;
+	background-color: transparent;
+	height: 1px;
+	border-radius: 0px;
 }
 
 .container {
@@ -1096,77 +1167,6 @@ th {
 	transform: scale(1.13);
 }
 
-hr {
-	align-items: center;
-	border: 0;
-	display: flex;
-	justify-content: var(--flex-alignment);
-	min-height: 1rem;
-	padding: 0;
-	position: relative;
-	width: 100%;
-}
-
-hr:before {
-	content: '';
-}
-
-#divider03:before {
-	width: 100%;
-	background-color: transparent;
-	height: 1px;
-	border-radius: 0px;
-}
-
-#divider04:before {
-	width: 100%;
-	background-color: transparent;
-	height: 1px;
-	border-radius: 0px;
-}
-
-#divider09:before {
-	width: 100%;
-	background-color: transparent;
-	height: 1px;
-	border-radius: 0px;
-}
-
-#divider10:before {
-	width: 100%;
-	background-color: transparent;
-	height: 1px;
-	border-radius: 0px;
-}
-
-#divider07:before {
-	width: 100%;
-	background-color: transparent;
-	height: 1px;
-	border-radius: 0px;
-}
-
-#divider08:before {
-	width: 100%;
-	background-color: transparent;
-	height: 1px;
-	border-radius: 0px;
-}
-
-#divider01:before {
-	width: 100%;
-	background-color: transparent;
-	height: 1px;
-	border-radius: 0px;
-}
-
-#divider02:before {
-	width: 100%;
-	background-color: transparent;
-	height: 1px;
-	border-radius: 0px;
-}
-
 .video {
 	position: relative;
 }
@@ -1405,14 +1405,14 @@ hr:before {
 	h1.style2, h2.style2, h3.style2, p.style2 {
 		letter-spacing: 0.328125rem;
 		width: calc(100% + 0.328125rem);
-		font-size: 1em;
+		font-size: 0.875em;
 		line-height: 1.375;
 	}
 	
 	h1.style1, h2.style1, h3.style1, p.style1 {
 		letter-spacing: 0.284375rem;
 		width: calc(100% + 0.284375rem);
-		font-size: 3.5em;
+		font-size: 2em;
 		line-height: 1.25;
 	}
 	
@@ -1459,6 +1459,38 @@ hr:before {
 	
 	#table01 th, #table01 td {
 		padding: 0.5rem 0.6875rem;
+	}
+	
+	#divider08:before {
+		width: 1rem;
+	}
+	
+	#divider03:before {
+		width: 100rem;
+	}
+	
+	#divider04:before {
+		width: 100rem;
+	}
+	
+	#divider09:before {
+		width: 100rem;
+	}
+	
+	#divider10:before {
+		width: 100rem;
+	}
+	
+	#divider07:before {
+		width: 100rem;
+	}
+	
+	#divider01:before {
+		width: 100rem;
+	}
+	
+	#divider02:before {
+		width: 100rem;
 	}
 	
 	.container.style1 {
@@ -1754,38 +1786,6 @@ hr:before {
 		gap: 1rem;
 	}
 	
-	#divider03:before {
-		width: 100rem;
-	}
-	
-	#divider04:before {
-		width: 100rem;
-	}
-	
-	#divider09:before {
-		width: 100rem;
-	}
-	
-	#divider10:before {
-		width: 100rem;
-	}
-	
-	#divider07:before {
-		width: 100rem;
-	}
-	
-	#divider08:before {
-		width: 100rem;
-	}
-	
-	#divider01:before {
-		width: 100rem;
-	}
-	
-	#divider02:before {
-		width: 100rem;
-	}
-	
 	#video01 video {
 		width: 35.5rem;
 	}
@@ -1822,14 +1822,8 @@ hr:before {
 		--spacing: 1.3125rem;
 	}
 	
-	.buttons.style1 {
-		flex-direction: column;
-		flex-wrap: nowrap;
-	}
-	
 	.buttons.style1 li a {
-		max-width: 32rem;
-		width: 100%;
+		width: 12.875rem;
 	}
 	
 	
@@ -1869,11 +1863,11 @@ hr:before {
 	}
 	
 	h1.style2, h2.style2, h3.style2, p.style2 {
-		font-size: 1em;
+		font-size: 0.875em;
 	}
 	
 	h1.style1, h2.style1, h3.style1, p.style1 {
-		font-size: 3.5em;
+		font-size: 2em;
 	}
 	
 	h1.style3, h2.style3, h3.style3, p.style3 {
