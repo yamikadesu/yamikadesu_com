@@ -1722,6 +1722,104 @@
 		// Initialize.
 			scrollEvents.init();
 	
+	// Deferred.
+		(function() {
+		
+			var items = $$('.deferred'),
+				loadHandler, enterHandler;
+		
+			// Handlers.
+		
+				/**
+				 * "On Load" handler.
+				 */
+				loadHandler = function() {
+		
+					var i = this,
+						p = this.parentElement;
+		
+					// Not "done" yet? Bail.
+						if (i.dataset.src !== 'done')
+							return;
+		
+					// Show image.
+						if (Date.now() - i._startLoad < 375) {
+		
+							p.classList.remove('loading');
+							p.style.backgroundImage = 'none';
+							i.style.transition = '';
+							i.style.opacity = 1;
+		
+						}
+						else {
+		
+							p.classList.remove('loading');
+							i.style.opacity = 1;
+		
+							setTimeout(function() {
+								i.style.backgroundImage = 'none';
+								i.style.transition = '';
+							}, 375);
+		
+						}
+		
+				};
+		
+				/**
+				 * "On Enter" handler.
+				 */
+				enterHandler = function() {
+		
+					var	i = this,
+						p = this.parentElement,
+						src;
+		
+					// Get src, mark as "done".
+						src = i.dataset.src;
+						i.dataset.src = 'done';
+		
+					// Mark parent as loading.
+						p.classList.add('loading');
+		
+					// Swap placeholder for real image src.
+						i._startLoad = Date.now();
+						i.src = src;
+		
+				};
+		
+			// Initialize items.
+				items.forEach(function(p) {
+		
+					var i = p.firstElementChild;
+		
+					// Set parent to placeholder.
+						if (!p.classList.contains('enclosed')) {
+		
+							p.style.backgroundImage = 'url(' + i.src + ')';
+							p.style.backgroundSize = '100% 100%';
+							p.style.backgroundPosition = 'top left';
+							p.style.backgroundRepeat = 'no-repeat';
+		
+						}
+		
+					// Hide image.
+						i.style.opacity = 0;
+						i.style.transition = 'opacity 0.375s ease-in-out';
+		
+					// Load event.
+						i.addEventListener('load', loadHandler);
+		
+					// Add to scroll events.
+						scrollEvents.add({
+							element: i,
+							enter: enterHandler,
+							offset: 250,
+						});
+		
+				});
+		
+		})();
+	
 	// "On Visible" animation.
 		var onvisible = {
 		
@@ -2431,15 +2529,67 @@
 		};
 	
 	// Initialize "On Visible" animations.
-		onvisible.add('.image.style2', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#image02', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#image01', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('.buttons.style1', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#text05', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#text04', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#gallery01', { style: 'fade-down', speed: 1000, intensity: 5, threshold: 3, delay: 0, state: true, replay: false });
 		onvisible.add('h1.style2, h2.style2, h3.style2, p.style2', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
 		onvisible.add('h1.style1, h2.style1, h3.style1, p.style1', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
 		onvisible.add('h1.style3, h2.style3, h3.style3, p.style3', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
-		onvisible.add('.buttons.style1', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
-		onvisible.add('#table01', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('.gallery.style1', { style: 'fade-down', speed: 1000, intensity: 5, threshold: 3, delay: 0, state: true, replay: false });
 		onvisible.add('.icons.style1', { style: 'fade-up', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
 		onvisible.add('h1.style4, h2.style4, h3.style4, p.style4', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
-		onvisible.add('#video01', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
-		onvisible.add('#list02', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#image09', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#image10', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#text39', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#text18', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#gallery06', { style: 'fade-down', speed: 1000, intensity: 5, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#image03', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#image04', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#text42', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#text03', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#gallery03', { style: 'fade-down', speed: 1000, intensity: 5, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#image07', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#image08', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#text41', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#text15', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#gallery05', { style: 'fade-down', speed: 1000, intensity: 5, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#image05', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#image06', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#text43', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#text10', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#gallery04', { style: 'fade-down', speed: 1000, intensity: 5, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#image11', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#image12', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#text44', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#text21', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#gallery07', { style: 'fade-down', speed: 1000, intensity: 5, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#image13', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#image14', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#text45', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#text24', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#gallery08', { style: 'fade-down', speed: 1000, intensity: 5, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('.image.style2', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#image18', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#text46', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#text27', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#gallery09', { style: 'fade-down', speed: 1000, intensity: 5, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#image17', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#image16', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#text47', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#text32', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#gallery10', { style: 'fade-down', speed: 1000, intensity: 5, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#image19', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#image20', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#text48', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#text35', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#gallery11', { style: 'fade-down', speed: 1000, intensity: 5, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#image21', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#image22', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#text49', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#text36', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#gallery12', { style: 'fade-down', speed: 1000, intensity: 5, threshold: 3, delay: 0, state: true, replay: false });
 
 })();
