@@ -672,7 +672,6 @@ body.is-instant:after {
 	font-weight: 500;
 	border-radius: 2.5rem;
 	box-shadow: 0rem 0rem 0.625rem 0.125rem rgba(77,135,189,0.471);
-	justify-content: flex-start;
 	transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
 }
 
@@ -692,10 +691,6 @@ body.is-instant:after {
 .buttons.style1 li a .label {
 	direction: var(--site-language-direction);
 	overflow: hidden;
-	flex-grow: 1;
-	flex-shrink: 1;
-	text-align: right;
-	width: 100%;
 }
 
 .buttons.style1 .button {
@@ -738,7 +733,7 @@ h1 span[style], h2 span[style], h3 span[style], p span[style], h1 strong, h2 str
 	font-family: 'Baloo', cursive;
 	letter-spacing: 0.325rem;
 	width: calc(100% + 0.325rem);
-	font-size: 1.5em;
+	font-size: 2.5em;
 	line-height: 1.25;
 	font-weight: 400;
 }
@@ -896,7 +891,7 @@ h1.style3 span.p:nth-child(n + 2), h2.style3 span.p:nth-child(n + 2), h3.style3 
 h1.style4, h2.style4, h3.style4, p.style4 {
 	text-align: center;
 	font-variant: small-caps;
-	color: #FFB8DE;
+	color: #FF0D9E;
 	font-family: 'Baloo', cursive;
 	font-size: 1.5em;
 	line-height: 0.75;
@@ -933,7 +928,7 @@ h1.style4 span.p:nth-child(n + 2), h2.style4 span.p:nth-child(n + 2), h3.style4 
 	font-family: 'Baloo', cursive;
 	letter-spacing: 0.325rem;
 	width: calc(100% + 0.325rem);
-	font-size: 1.5em;
+	font-size: 2.5em;
 	line-height: 1.25;
 	font-weight: 400;
 }
@@ -999,7 +994,7 @@ h1.style4 span.p:nth-child(n + 2), h2.style4 span.p:nth-child(n + 2), h3.style4 
 	font-family: 'Baloo', cursive;
 	letter-spacing: 0.325rem;
 	width: calc(100% + 0.325rem);
-	font-size: 1.5em;
+	font-size: 2.5em;
 	line-height: 1.25;
 	font-weight: 400;
 }
@@ -1065,7 +1060,7 @@ h1.style4 span.p:nth-child(n + 2), h2.style4 span.p:nth-child(n + 2), h3.style4 
 	font-family: 'Baloo', cursive;
 	letter-spacing: 0.325rem;
 	width: calc(100% + 0.325rem);
-	font-size: 1.5em;
+	font-size: 2.5em;
 	line-height: 1.25;
 	font-weight: 400;
 }
@@ -1131,7 +1126,7 @@ h1.style4 span.p:nth-child(n + 2), h2.style4 span.p:nth-child(n + 2), h3.style4 
 	font-family: 'Baloo', cursive;
 	letter-spacing: 0.325rem;
 	width: calc(100% + 0.325rem);
-	font-size: 1.5em;
+	font-size: 2.5em;
 	line-height: 1.25;
 	font-weight: 400;
 }
@@ -1197,7 +1192,7 @@ h1.style4 span.p:nth-child(n + 2), h2.style4 span.p:nth-child(n + 2), h3.style4 
 	font-family: 'Baloo', cursive;
 	letter-spacing: 0.325rem;
 	width: calc(100% + 0.325rem);
-	font-size: 1.5em;
+	font-size: 2.5em;
 	line-height: 1.25;
 	font-weight: 400;
 }
@@ -1263,7 +1258,7 @@ h1.style4 span.p:nth-child(n + 2), h2.style4 span.p:nth-child(n + 2), h3.style4 
 	font-family: 'Baloo', cursive;
 	letter-spacing: 0.325rem;
 	width: calc(100% + 0.325rem);
-	font-size: 1.5em;
+	font-size: 2.5em;
 	line-height: 1.25;
 	font-weight: 400;
 }
@@ -1329,7 +1324,7 @@ h1.style4 span.p:nth-child(n + 2), h2.style4 span.p:nth-child(n + 2), h3.style4 
 	font-family: 'Baloo', cursive;
 	letter-spacing: 0.325rem;
 	width: calc(100% + 0.325rem);
-	font-size: 1.5em;
+	font-size: 2.5em;
 	line-height: 1.25;
 	font-weight: 400;
 }
@@ -1395,7 +1390,7 @@ h1.style4 span.p:nth-child(n + 2), h2.style4 span.p:nth-child(n + 2), h3.style4 
 	font-family: 'Baloo', cursive;
 	letter-spacing: 0.325rem;
 	width: calc(100% + 0.325rem);
-	font-size: 1.5em;
+	font-size: 2.5em;
 	line-height: 1.25;
 	font-weight: 400;
 }
@@ -1461,7 +1456,7 @@ h1.style4 span.p:nth-child(n + 2), h2.style4 span.p:nth-child(n + 2), h3.style4 
 	font-family: 'Baloo', cursive;
 	letter-spacing: 0.325rem;
 	width: calc(100% + 0.325rem);
-	font-size: 1.5em;
+	font-size: 2.5em;
 	line-height: 1.25;
 	font-weight: 400;
 }
@@ -1527,7 +1522,7 @@ h1.style4 span.p:nth-child(n + 2), h2.style4 span.p:nth-child(n + 2), h3.style4 
 	font-family: 'Baloo', cursive;
 	letter-spacing: 0.325rem;
 	width: calc(100% + 0.325rem);
-	font-size: 1.5em;
+	font-size: 2.5em;
 	line-height: 1.25;
 	font-weight: 400;
 }
@@ -4663,19 +4658,19 @@ hr:before {
 }
 
 .icons.style1 a svg {
-	fill: #FFB8DE;
+	fill: #FF0D9E;
 }
 
 .icons.style1 a {
-	border: solid 1px #FFB8DE;
+	border: solid 1px #FF0D9E;
 }
 
 .icons.style1 a:hover {
-	border-color: #FF0D9E !important;
+	border-color: #FFB8DE !important;
 }
 
 .icons.style1 a:hover svg {
-	fill: #FF0D9E !important;
+	fill: #FFB8DE !important;
 }
 
 .icons.style1 li a + svg {
@@ -4788,7 +4783,7 @@ hr:before {
 	#text05 {
 		letter-spacing: 0.284375rem;
 		width: calc(100% + 0.284375rem);
-		font-size: 1.5em;
+		font-size: 2em;
 		line-height: 1.25;
 	}
 	
@@ -4805,14 +4800,14 @@ hr:before {
 		padding-right: 1.875rem;
 		letter-spacing: 0rem;
 		width: 100%;
-		font-size: 1.25em;
+		font-size: 1em;
 		line-height: 1.375;
 	}
 	
 	h1.style2, h2.style2, h3.style2, p.style2 {
 		letter-spacing: 0.328125rem;
 		width: calc(100% + 0.328125rem);
-		font-size: 1em;
+		font-size: 0.875em;
 		line-height: 1.375;
 	}
 	
@@ -4827,7 +4822,7 @@ hr:before {
 	h1.style1, h2.style1, h3.style1, p.style1 {
 		letter-spacing: 0.284375rem;
 		width: calc(100% + 0.284375rem);
-		font-size: 3.5em;
+		font-size: 2em;
 		line-height: 1.25;
 	}
 	
@@ -4844,7 +4839,7 @@ hr:before {
 		padding-right: 1.875rem;
 		letter-spacing: 0rem;
 		width: 100%;
-		font-size: 1.25em;
+		font-size: 1.125em;
 		line-height: 1.375;
 	}
 	
@@ -4866,7 +4861,7 @@ hr:before {
 	#text39 {
 		letter-spacing: 0.284375rem;
 		width: calc(100% + 0.284375rem);
-		font-size: 1.5em;
+		font-size: 2em;
 		line-height: 1.25;
 	}
 	
@@ -4883,7 +4878,7 @@ hr:before {
 		padding-right: 1.875rem;
 		letter-spacing: 0rem;
 		width: 100%;
-		font-size: 1.25em;
+		font-size: 1em;
 		line-height: 1.375;
 	}
 	
@@ -4898,7 +4893,7 @@ hr:before {
 	#text42 {
 		letter-spacing: 0.284375rem;
 		width: calc(100% + 0.284375rem);
-		font-size: 1.5em;
+		font-size: 2em;
 		line-height: 1.25;
 	}
 	
@@ -4915,7 +4910,7 @@ hr:before {
 		padding-right: 1.875rem;
 		letter-spacing: 0rem;
 		width: 100%;
-		font-size: 1.25em;
+		font-size: 1em;
 		line-height: 1.375;
 	}
 	
@@ -4930,7 +4925,7 @@ hr:before {
 	#text41 {
 		letter-spacing: 0.284375rem;
 		width: calc(100% + 0.284375rem);
-		font-size: 1.5em;
+		font-size: 2em;
 		line-height: 1.25;
 	}
 	
@@ -4947,7 +4942,7 @@ hr:before {
 		padding-right: 1.875rem;
 		letter-spacing: 0rem;
 		width: 100%;
-		font-size: 1.25em;
+		font-size: 1em;
 		line-height: 1.375;
 	}
 	
@@ -4962,7 +4957,7 @@ hr:before {
 	#text43 {
 		letter-spacing: 0.284375rem;
 		width: calc(100% + 0.284375rem);
-		font-size: 1.5em;
+		font-size: 2em;
 		line-height: 1.25;
 	}
 	
@@ -4979,7 +4974,7 @@ hr:before {
 		padding-right: 1.875rem;
 		letter-spacing: 0rem;
 		width: 100%;
-		font-size: 1.25em;
+		font-size: 1em;
 		line-height: 1.375;
 	}
 	
@@ -4994,7 +4989,7 @@ hr:before {
 	#text44 {
 		letter-spacing: 0.284375rem;
 		width: calc(100% + 0.284375rem);
-		font-size: 1.5em;
+		font-size: 2em;
 		line-height: 1.25;
 	}
 	
@@ -5011,7 +5006,7 @@ hr:before {
 		padding-right: 1.875rem;
 		letter-spacing: 0rem;
 		width: 100%;
-		font-size: 1.25em;
+		font-size: 1em;
 		line-height: 1.375;
 	}
 	
@@ -5026,7 +5021,7 @@ hr:before {
 	#text45 {
 		letter-spacing: 0.284375rem;
 		width: calc(100% + 0.284375rem);
-		font-size: 1.5em;
+		font-size: 2em;
 		line-height: 1.25;
 	}
 	
@@ -5043,7 +5038,7 @@ hr:before {
 		padding-right: 1.875rem;
 		letter-spacing: 0rem;
 		width: 100%;
-		font-size: 1.25em;
+		font-size: 1em;
 		line-height: 1.375;
 	}
 	
@@ -5058,7 +5053,7 @@ hr:before {
 	#text46 {
 		letter-spacing: 0.284375rem;
 		width: calc(100% + 0.284375rem);
-		font-size: 1.5em;
+		font-size: 2em;
 		line-height: 1.25;
 	}
 	
@@ -5075,7 +5070,7 @@ hr:before {
 		padding-right: 1.875rem;
 		letter-spacing: 0rem;
 		width: 100%;
-		font-size: 1.25em;
+		font-size: 1em;
 		line-height: 1.375;
 	}
 	
@@ -5090,7 +5085,7 @@ hr:before {
 	#text47 {
 		letter-spacing: 0.284375rem;
 		width: calc(100% + 0.284375rem);
-		font-size: 1.5em;
+		font-size: 2em;
 		line-height: 1.25;
 	}
 	
@@ -5107,7 +5102,7 @@ hr:before {
 		padding-right: 1.875rem;
 		letter-spacing: 0rem;
 		width: 100%;
-		font-size: 1.25em;
+		font-size: 1em;
 		line-height: 1.375;
 	}
 	
@@ -5122,7 +5117,7 @@ hr:before {
 	#text48 {
 		letter-spacing: 0.284375rem;
 		width: calc(100% + 0.284375rem);
-		font-size: 1.5em;
+		font-size: 2em;
 		line-height: 1.25;
 	}
 	
@@ -5139,7 +5134,7 @@ hr:before {
 		padding-right: 1.875rem;
 		letter-spacing: 0rem;
 		width: 100%;
-		font-size: 1.25em;
+		font-size: 1em;
 		line-height: 1.375;
 	}
 	
@@ -5154,7 +5149,7 @@ hr:before {
 	#text49 {
 		letter-spacing: 0.284375rem;
 		width: calc(100% + 0.284375rem);
-		font-size: 1.5em;
+		font-size: 2em;
 		line-height: 1.25;
 	}
 	
@@ -5171,7 +5166,7 @@ hr:before {
 		padding-right: 1.875rem;
 		letter-spacing: 0rem;
 		width: 100%;
-		font-size: 1.25em;
+		font-size: 1em;
 		line-height: 1.375;
 	}
 	
@@ -7108,16 +7103,6 @@ hr:before {
 		--spacing: 1.3125rem;
 	}
 	
-	.buttons.style1 {
-		flex-direction: column;
-		flex-wrap: nowrap;
-	}
-	
-	.buttons.style1 li a {
-		max-width: 32rem;
-		width: 100%;
-	}
-	
 	
 	
 	.container.style2 > .wrapper > .inner {
@@ -7159,23 +7144,23 @@ hr:before {
 	}
 	
 	#text05 {
-		font-size: 1.5em;
+		font-size: 2em;
 	}
 	
 	#text04 {
-		font-size: 1.25em;
-	}
-	
-	h1.style2, h2.style2, h3.style2, p.style2 {
 		font-size: 1em;
 	}
 	
+	h1.style2, h2.style2, h3.style2, p.style2 {
+		font-size: 0.875em;
+	}
+	
 	h1.style1, h2.style1, h3.style1, p.style1 {
-		font-size: 3.5em;
+		font-size: 2em;
 	}
 	
 	h1.style3, h2.style3, h3.style3, p.style3 {
-		font-size: 1.25em;
+		font-size: 1.125em;
 	}
 	
 	h1.style4, h2.style4, h3.style4, p.style4 {
@@ -7183,83 +7168,83 @@ hr:before {
 	}
 	
 	#text39 {
-		font-size: 1.5em;
+		font-size: 2em;
 	}
 	
 	#text18 {
-		font-size: 1.25em;
+		font-size: 1em;
 	}
 	
 	#text42 {
-		font-size: 1.5em;
+		font-size: 2em;
 	}
 	
 	#text03 {
-		font-size: 1.25em;
+		font-size: 1em;
 	}
 	
 	#text41 {
-		font-size: 1.5em;
+		font-size: 2em;
 	}
 	
 	#text15 {
-		font-size: 1.25em;
+		font-size: 1em;
 	}
 	
 	#text43 {
-		font-size: 1.5em;
+		font-size: 2em;
 	}
 	
 	#text10 {
-		font-size: 1.25em;
+		font-size: 1em;
 	}
 	
 	#text44 {
-		font-size: 1.5em;
+		font-size: 2em;
 	}
 	
 	#text21 {
-		font-size: 1.25em;
+		font-size: 1em;
 	}
 	
 	#text45 {
-		font-size: 1.5em;
+		font-size: 2em;
 	}
 	
 	#text24 {
-		font-size: 1.25em;
+		font-size: 1em;
 	}
 	
 	#text46 {
-		font-size: 1.5em;
+		font-size: 2em;
 	}
 	
 	#text27 {
-		font-size: 1.25em;
+		font-size: 1em;
 	}
 	
 	#text47 {
-		font-size: 1.5em;
+		font-size: 2em;
 	}
 	
 	#text32 {
-		font-size: 1.25em;
+		font-size: 1em;
 	}
 	
 	#text48 {
-		font-size: 1.5em;
+		font-size: 2em;
 	}
 	
 	#text35 {
-		font-size: 1.25em;
+		font-size: 1em;
 	}
 	
 	#text49 {
-		font-size: 1.5em;
+		font-size: 2em;
 	}
 	
 	#text36 {
-		font-size: 1.25em;
+		font-size: 1em;
 	}
 	
 	#gallery01 ul li .caption p {

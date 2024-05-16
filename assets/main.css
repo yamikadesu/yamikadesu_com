@@ -429,7 +429,7 @@ h1.style3 span.p:nth-child(n + 2), h2.style3 span.p:nth-child(n + 2), h3.style3 
 h1.style4, h2.style4, h3.style4, p.style4 {
 	text-align: center;
 	font-variant: small-caps;
-	color: #B8F2FF;
+	color: #0DD4FF;
 	font-family: 'Baloo', cursive;
 	font-size: 1.5em;
 	line-height: 0.75;
@@ -502,7 +502,6 @@ h1.style4 span.p:nth-child(n + 2), h2.style4 span.p:nth-child(n + 2), h3.style4 
 	font-weight: 400;
 	border-radius: 2.5rem;
 	box-shadow: 0rem 0rem 0.625rem 0.125rem rgba(255,48,121,0.169);
-	justify-content: flex-start;
 	transition: transform 0.25s ease, color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
 }
 
@@ -522,10 +521,6 @@ h1.style4 span.p:nth-child(n + 2), h2.style4 span.p:nth-child(n + 2), h3.style4 
 .buttons.style1 li a .label {
 	direction: var(--site-language-direction);
 	overflow: hidden;
-	flex-grow: 1;
-	flex-shrink: 1;
-	text-align: right;
-	width: 100%;
 }
 
 .buttons.style1 .button {
@@ -1140,19 +1135,19 @@ hr:before {
 }
 
 .icons.style1 a svg {
-	fill: #B8F2FF;
+	fill: #0DD4FF;
 }
 
 .icons.style1 a {
-	border: solid 1px #B8F2FF;
+	border: solid 1px #0DD4FF;
 }
 
 .icons.style1 a:hover {
-	border-color: #0DD4FF !important;
+	border-color: #B8F2FF  !important;
 }
 
 .icons.style1 a:hover svg {
-	fill: #0DD4FF !important;
+	fill: #B8F2FF  !important;
 }
 
 .icons.style1 li a + svg {
@@ -1820,10 +1815,6 @@ hr:before {
 	
 	#main > .inner {
 		--spacing: 1.3125rem;
-	}
-	
-	.buttons.style1 li a {
-		width: 12.875rem;
 	}
 	
 	
