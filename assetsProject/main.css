@@ -891,7 +891,7 @@ h1.style3 span.p:nth-child(n + 2), h2.style3 span.p:nth-child(n + 2), h3.style3 
 h1.style4, h2.style4, h3.style4, p.style4 {
 	text-align: center;
 	font-variant: small-caps;
-	color: #FF0D9E;
+	color: #FFA3D4;
 	font-family: 'Baloo', cursive;
 	font-size: 1.5em;
 	line-height: 0.75;
@@ -4658,19 +4658,19 @@ hr:before {
 }
 
 .icons.style1 a svg {
-	fill: #FF0D9E;
+	fill: #FFA3D4;
 }
 
 .icons.style1 a {
-	border: solid 1px #FF0D9E;
+	border: solid 1px #FFA3D4;
 }
 
 .icons.style1 a:hover {
-	border-color: #FFB8DE !important;
+	border-color: #ED008E !important;
 }
 
 .icons.style1 a:hover svg {
-	fill: #FFB8DE !important;
+	fill: #ED008E !important;
 }
 
 .icons.style1 li a + svg {
