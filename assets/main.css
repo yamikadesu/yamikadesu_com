@@ -41,7 +41,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 .countdownContainer {
     text-align: center;
-    font-size: 8rem;
+    font-size: 8vw;
     font-weight: bold;
     letter-spacing: 0.1em;
     font-family: 'Roboto Mono', monospace;
@@ -54,6 +54,9 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
     align-items: center;
     opacity: 0; /* Comienza transparente */
     animation: fadeIn 2s forwards; /* Animación de entrada */
+	position: absolute; /* Aseguramos que esté en la parte superior */
+    top: 0;
+    left: 0;
 }
 
 .countdownContainer #countdown {
@@ -63,6 +66,13 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 .start-animation {
     animation: fadeAndScaleIn 5s forwards cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+/* Media Queries para diferentes tamaños de pantalla */
+@media (max-width: 768px) {
+    .countdownContainer {
+        font-size: 6vw; /* Aumentamos el tamaño de la fuente en pantallas pequeñas */
+    }
 }
 
 /* Fin de la animación */
