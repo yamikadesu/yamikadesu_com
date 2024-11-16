@@ -1,4 +1,52 @@
-/* Carrd Site JS | carrd.co | License: MIT */
+document.getElementById("latest-release-button").addEventListener("click", function () {
+    const main = document.getElementById("main");
+    const hiddenContainer = document.getElementById("hidden-container");
+    const audio = document.getElementById("background-music");
+    const countdownElement = document.getElementById("countdown");
+
+    // Reproducir música inmediatamente
+    audio.play();
+
+    // Desvanecer el div principal
+    main.classList.add("fade-out");
+
+    // Mostrar el contenedor del contador con animación de opacidad
+    setTimeout(() => {
+        main.style.display = "none";
+        hiddenContainer.style.display = "flex";
+		document.body.style.overflow = 'hidden';
+
+		window.addEventListener('wheel', function(event) {
+			event.preventDefault(); // Prevenir el scroll
+		}, { passive: false });
+
+        // Detectar fin de la animación del contenedor
+        hiddenContainer.addEventListener("animationend", () => {
+            countdownElement.classList.add("start-animation"); // Añadir la clase de animación
+
+			function updateCountdown() {
+                const now = new Date();
+                const targetDate = new Date('2024-12-28T00:00:00'); // Cambia esta fecha según sea necesario
+                const difference = targetDate - now;
+
+                if (difference < 0) {
+                    countdownElement.textContent = "00:00:00:00";
+                    return;
+                }
+
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+                const minutes = Math.floor((difference / (1000 * 60)) % 60);
+                const seconds = Math.floor((difference / 1000) % 60);
+
+                countdownElement.textContent = `${days.toString().padStart(2, '0')}:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000); // Actualiza cada segundo
+        });
+    }, 2000); // Tiempo de desvanecimiento del `main`
+});
 
 (function() {
 

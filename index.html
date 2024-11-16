@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
 <html lang="en">
 	<head>
-		<title>YamikaDesu Commission Info</title>
 		<meta charset="utf-8" />
+		<title>YamikaDesu Commission Info</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<meta name="color-scheme" content="light only" />
 		<meta name="description" content="Check here all the info about YamikaDesu&#039;s Comissions" />
@@ -11,12 +11,19 @@
 		<meta property="og:type" content="website" />
 		<meta property="og:description" content="Check here all the info about YamikaDesu&#039;s Comissions" />
 		<link href="https://fonts.googleapis.com/css2?display=swap&family=Nothing+You+Could+Do:ital,wght@0,400;1,400&family=Baloo:ital,wght@0,400;1,400&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,wght@0,200;0,400;1,200;1,400" rel="stylesheet" type="text/css" />
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
 		<link rel="icon" type="image/png" href="assets/images/favicon.png" />
 		<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
 		<link rel="stylesheet" href="assets/main.css" />
 		<noscript><link rel="stylesheet" href="assets/noscript.css" /></noscript>
 	</head>
 	<body class="is-loading">
+		<audio id="background-music" loop>
+			<source src="assets/latestRelease/WebVersionEmpty.wav" type="audio/wav">
+		</audio>
+		<div class="countdownContainer" id="hidden-container" style="opacity: 0; display: none;">
+			<div id="countdown"></div>
+		</div>
 		<div id="wrapper">
 			<div id="main">
 				<div class="inner">
@@ -39,7 +46,8 @@
 											</li><li>
 												<a href="yamiproject.html" class="button n02"><svg aria-labelledby="icon-title"><title id="icon-title">Paw</title><use xlink:href="assets/icons.svg#paw"></use></svg><span class="label">Yami&#039;s Project</span></a>
 											</li><li>
-												<a href="#latestrelease" class="button n03"><svg aria-labelledby="icon-title"><title id="icon-title">Ko-fi</title><use xlink:href="assets/icons.svg#ko-fi"></use></svg><span class="label">Latest Release</span></a>
+												<!--#latestrelease-->
+												<a href="javascript:void(0);" class="button n03" id="latest-release-button"><svg aria-labelledby="icon-title"><title id="icon-title">Play</title><use xlink:href="assets/icons.svg#play"></use></svg><span class="label">Latest Release</span></a>
 											</li>
 										</ul>
 									</div>
@@ -172,7 +180,7 @@
 										</div>
 									</div>
 									<p id="text06" class="style3">The prices above are estimates. The price will be proportional to the duration of the song.</p>
-									<h1 id="text05" class="style1">How I work</h1>
+									<h1 id="text05" class="style1">How do I work</h1>
 									<p id="text07" class="style3"><span class="p">I usually show previews of my work, following this order:</span><span class="p"><span style="color: #75E6FF"><strong>1.</strong></span> Initial planning for the melody with just the piano<br /><span style="color: #75E6FF"><strong>2.</strong></span> Add the main loops, drops and melodies of the main parts<br /><span style="color: #75E6FF"><strong>3.</strong></span> Add some improvements that you propose<br /><span style="color: #75E6FF"><strong>4.</strong></span> Final review for minor changes</span></p>
 									<ul id="buttons05" class="style1 buttons">
 										<li>
