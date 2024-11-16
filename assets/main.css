@@ -62,7 +62,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 }
 
 .start-animation {
-    animation: fadeAndScaleIn s forwards cubic-bezier(0.4, 0.0, 0.2, 1);
+    animation: fadeAndScaleIn 5s forwards cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 /* Fin de la animación */
