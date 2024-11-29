@@ -2440,13 +2440,269 @@
 		onvisible.add('#video01', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
 		onvisible.add('#list02', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
 
-		//Código para el Contador
+
+
+
+
+
+		// Timeline Configuración
+		const timelineData = [
+			{
+				date: "2021-12-29",
+				image: "assets/latestRelease/Anima Memoria 2.0.png",
+				audio: "assets/latestRelease/Anima MemoriA.mp3",
+			},
+		];
+
+		// Función para formatear la fecha
+		function formatDate(dateString) {
+			const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+			const date = new Date(dateString);
+			const day = date.getDate().toString().padStart(2, "0");
+			const month = months[date.getMonth()];
+			const year = date.getFullYear();
+			return `${day} ${month} ${year}`;
+		}
+
+		// Función para cerrar información de otros puntos
+		function closeAllPoints() {
+			const openPointsInfo = document.querySelectorAll(".timeline-info");
+			const openPointsDate = document.querySelectorAll(".timeline-date");
+			const openPointsAudio = document.querySelector("#timeline-audio");
+			if(openPointsAudio){
+				if (openPointsAudio.parentElement) {
+					openPointsAudio.parentElement.removeChild(openPointsAudio);
+				}
+			}
+			/*openPointsAudio.forEach((element) => {
+				if (element) { // Verificar si el elemento existe antes de manipularlo
+					if (element.parentElement) {
+						element.parentElement.removeChild(element);
+					}
+					//element.style.display = "none"; // Ocultar imágenes y fechas abiertas
+					//const parent = element.parentElement;
+					//if (parent) {
+					//	parent.innerHTML = ""; // Limpiar contenido del punto
+					//}
+				}
+			});*/
+			openPointsInfo.forEach((element) => {
+				if (element) { // Verificar si el elemento existe antes de manipularlo
+					element.style.animation = "slideDownInfo 0.5s cubic-bezier(0.56, 0, 0.89, 0.67) forwards, fadeOutOpacity 0.4s ease-out forwards"
+					// Esperar a que termine la animación
+					element.addEventListener("animationend", () => {
+						// Eliminar el elemento del DOM después de la animación
+						if (element.parentElement) {
+							element.parentElement.removeChild(element);
+						}
+					}, { once: true }); // Ejecutar el listener solo una vez
+					//element.style.display = "none"; // Ocultar imágenes y fechas abiertas
+					//const parent = element.parentElement;
+					//if (parent) {
+					//	parent.innerHTML = ""; // Limpiar contenido del punto
+					//}
+				}
+			});
+			openPointsDate.forEach((element) => { 
+				if (element) { // Verificar si el elemento existe antes de manipularlo 
+					element.style.animation = "slideUpDate 0.5s cubic-bezier(0.56, 0, 0.89, 0.67) forwards, fadeOutOpacity 0.4s ease-out forwards"
+					// Esperar a que termine la animación
+					element.addEventListener("animationend", () => {
+						// Eliminar el elemento del DOM después de la animación
+						if (element.parentElement) {
+							element.parentElement.removeChild(element);
+						}
+					}, { once: true }); // Ejecutar el listener solo una vez
+				}
+			});
+		}
+
+		// Crear la timeline dinámica con animaciones
+		function createTimeline(data) {
+			const container = document.getElementById("timeline-container");
+
+			// Si hay más de un punto, agregar la línea con animación
+			if (data.length > 1) {
+				const line = document.createElement("div");
+				line.classList.add("timeline-line");
+				line.style.animation = "lineExpandCenter 2s cubic-bezier(0.4, 0.0, 0.2, 1) forwards";
+				container.appendChild(line);
+			}
+
+			const centerIndex = (data.length - 1) / 2; // Centro del array (puede ser decimal si es impar)
+			//const maxDelay = Math.floor(data.length / 2) * 0.5; // Tiempo máximo de retraso
+
+			// Crear los puntos de la timeline con animación retardada
+			data.forEach((item, index) => {
+				const point = document.createElement("div");
+				
+				point.classList.add("timeline-point");
+				point.style.setProperty("--from-center", `0`);
+				if (data.length === 1){
+					point.classList.add("timeline-point-only");
+					//point.style.setProperty("left", "calc(50% - 20px)");
+					point.style.animation = `pointAppearFromCenter 1s ease-out forwards`;
+				}
+				else if(data.length > 1){
+					//const timelineLine = document.getElementById("timeline-container");
+					//const translateX = (index - (data.length - 1) / 2) * 100; // Ajustar según el índice
+					//point.style.setProperty("--translateX", `${translateX}%`);
+
+					//const fromCenter = ((data.length - 1) / 2 - index) * 100; // 100px por paso
+					
+					
+					// Añadir animación con retardo
+					//point.style.animationDelay = `${index * 0.5}s`;
+					
+					const fromCenter = Math.abs(centerIndex - index); // Distancia al centro
+					const animationDelay = (fromCenter * 0.3).toFixed(2); // Tiempo basado en la distancia
+
+					point.style.animationDelay = `${animationDelay}s`;
+					
+					var doneOnceAnim = true;
+					
+					// Detectar fin de la animación del contenedor
+					setTimeout(() => {
+						if(doneOnceAnim){
+							//const indexHTML = Array.from(point.parentElement.children).indexOf(point);
+							// Aplicar animación personalizada
+							point.style.animation = `pointAppearFromCenter 1s ease-out forwards`;
+							doneOnceAnim = false;
+						}
+					}, animationDelay * 900);
+				}
+			
+				// Añadir evento al clic en cada punto
+				point.addEventListener("click", () => handleTimelineClick(item, point));
+				container.appendChild(point);
+			});
+		}
+
+		function handleTimelineClick(item, point) {
+			const existingImage = point.querySelector("img");
+			const existingDate = point.querySelector(".timeline-date");
+			const existingVideo = point.querySelector("iframe");
+			//const timelineContainer = document.getElementById("timeline-container");
+			//const audioElement = document.getElementById("background-music");
+			const backgroundMusic = document.getElementById('background-music'); // Asegúrate de que exista este elemento
+			let activeAudio = null;
+
+			// Cerrar otros puntos abiertos
+			closeAllPoints();
+		
+			// Si ya hay contenido visible en este punto, cerrarlo
+			if (existingImage || existingDate || existingVideo) {
+				//point.innerHTML = ""; // Limpiar contenido del punto
+				//timelineContainer.style.marginTop = "30px"; // Resetear margen
+				//audioElement.play(); // Reanudar música de fondo
+				backgroundMusic.play();
+				return;
+			}
+		
+			// Crear la imagen y el texto con animación
+			const imageElement = document.createElement("img");
+			imageElement.src = item.image;
+			imageElement.classList.add("timeline-info");
+			//imageElement.style.animation = "imageSlideUp 0.5s cubic-bezier(0, 0, 0, 1)"; // Animación al aparecer
+			point.appendChild(imageElement);
+		
+			imageElement.addEventListener('click', (event) => {
+				event.stopPropagation();
+				// Si hay un video abierto, lo cerramos
+				if (activeAudio) {
+					if (activeAudio.parentElement) {
+						activeAudio.parentElement.removeChild(activeAudio);
+					}
+					imageElement.classList.remove("timeline-info-audio");
+					activeAudio = null;
+					backgroundMusic.play(); // Reanudar la música
+					return;
+				}
+		
+				const audioElement = document.createElement("audio");
+				audioElement.id = "timeline-audio";
+				audioElement.src = `${item.audio}`;
+				audioElement.loop = true;
+				imageElement.appendChild(audioElement);
+				imageElement.classList.add("timeline-info-audio");
+				/*imageElement.innerHTML = `
+					<iframe 
+						class="timeline-video"
+						src="${item.video}?autoplay=1" 
+						frameborder="0" 
+						allow="autoplay; encrypted-media"
+						allowfullscreen>
+					</iframe>
+				`;*/
+
+				/*if (imageElement.parentElement) {
+					imageElement.parentElement.removeChild(imageElement);
+				}*/
+
+				activeAudio = audioElement; // Marcar el punto como activo
+				activeAudio.play();
+				backgroundMusic.pause(); // Pausar la música de fondo
+			});
+
+
+
+
+			const dateElement = document.createElement("div");
+			dateElement.textContent = formatDate(item.date); // Formatear la fecha
+			dateElement.classList.add("timeline-date");
+			//dateElement.style.animation = "dateSlideDown 0.5s cubic-bezier(0, 0, 0, 1)"; // Animación al aparecer
+			point.appendChild(dateElement);
+		
+			// Mostrar la imagen y el texto
+			imageElement.style.display = "block";
+			dateElement.style.display = "block";
+		
+			// Mover la timeline hacia abajo
+			//timelineContainer.style.marginTop = "100px"; // Ajustar margen para dejar espacio
+		
+			// Evento al hacer clic en la imagen
+			/*imageElement.addEventListener("click", (event) => {
+				event.stopPropagation(); // Evitar que el evento del punto se dispare
+				window.open(item.video, "_blank"); // Abrir el video en una nueva ventana
+			});*/
+		}
+		
+		
+		// Inicialización al mostrar el contador
+		/*document.getElementById("latest-release-button").addEventListener("click", () => {
+			setTimeout(() => {
+				const timelineContainer = document.getElementById("timeline-container");
+				timelineContainer.style.opacity = "1"; // Mostrar la Timeline con transición
+				createTimeline(timelineData);
+				}, 2000); // Después de la animación del contador
+				});*/
+				
+				//Código para el Contador
 		document.getElementById("latest-release-button").addEventListener("click", function () {
 			const main = document.getElementById("main");
 			const hiddenContainer = document.getElementById("hidden-container");
+			const timelineContainer = document.getElementById("timeline-container");
 			const audio = document.getElementById("background-music");
 			const countdownElement = document.getElementById("countdown");
-		
+			function updateCountdown() {
+				const now = new Date();
+				const targetDate = new Date('2024-12-29T00:00:00'); // Cambia esta fecha según sea necesario
+				const difference = targetDate - now;
+	
+				if (difference < 0) {
+					countdownElement.textContent = "00:00:00:00";
+					return;
+				}
+	
+				const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+				const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+				const minutes = Math.floor((difference / (1000 * 60)) % 60);
+				const seconds = Math.floor((difference / 1000) % 60);
+	
+				countdownElement.textContent = `${days.toString().padStart(2, '0')}:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+			}
+			
+			//console.log("DEBUG TEXT")
 			// Reproducir música inmediatamente
 			audio.play();
 		
@@ -2463,32 +2719,21 @@
 				window.addEventListener('wheel', function(event) {
 					event.preventDefault(); // Prevenir el scroll
 				}, { passive: false });
-		
+
+				window.addEventListener('contextmenu', function(event) {
+					event.preventDefault(); // Prevenir el menú contextual
+				}, { passive: false });
+
 				// Detectar fin de la animación del contenedor
 				hiddenContainer.addEventListener("animationend", () => {
 					countdownElement.classList.add("start-animation"); // Añadir la clase de animación
-		
-					function updateCountdown() {
-						const now = new Date();
-						const targetDate = new Date('2024-12-28T00:00:00'); // Cambia esta fecha según sea necesario
-						const difference = targetDate - now;
-		
-						if (difference < 0) {
-							countdownElement.textContent = "00:00:00:00";
-							return;
-						}
-		
-						const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-						const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-						const minutes = Math.floor((difference / (1000 * 60)) % 60);
-						const seconds = Math.floor((difference / 1000) % 60);
-		
-						countdownElement.textContent = `${days.toString().padStart(2, '0')}:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-					}
-		
 					updateCountdown();
-					setInterval(updateCountdown, 1000); // Actualiza cada segundo
-				});
+					setInterval(updateCountdown, 500); // Actualiza cada segundo
+					setTimeout(() => {
+						timelineContainer.style.opacity = "1";
+						createTimeline(timelineData);
+					}, 4000); // Asegura que el contador se haya mostrado
+				}, { once: true });
 			}, 2000); // Tiempo de desvanecimiento del `main`
-		});
+		}, { once: true });
 })();

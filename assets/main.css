@@ -47,21 +47,30 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
     font-family: 'Roboto Mono', monospace;
     color: #fff;
     background: #000; /* Fondo opaco */
+	/*background-image: url('latestRelease/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;*/
     width: 100vw;
     height: 100vh;
     display: flex;
-    justify-content: center;
+	flex-direction: column; /* Alinea contador arriba y timeline abajo */
+    justify-content: center; /* Contador en la parte superior */
     align-items: center;
     opacity: 0; /* Comienza transparente */
     animation: fadeIn 2s forwards; /* Animación de entrada */
-	position: absolute; /* Aseguramos que esté en la parte superior */
+	position: relative;
+	overflow: hidden;
     top: 0;
     left: 0;
+	user-select: none;
 }
 
 .countdownContainer #countdown {
     opacity: 0;
     transform: scale(0.6);
+	padding-bottom: 5%; /* Espacio para el contador */
+	padding-top: 10%;
 }
 
 .start-animation {
@@ -69,10 +78,312 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 }
 
 /* Media Queries para diferentes tamaños de pantalla */
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
     .countdownContainer {
-        font-size: 6vw; /* Aumentamos el tamaño de la fuente en pantallas pequeñas */
+        font-size: 6vw; 
     }
+}*/
+
+
+/* Timeline */
+
+.timeline-container {
+    position: relative;
+    width: 55%;
+    margin-top: 10%; /* Margen entre el contador y la timeline */
+	margin-bottom: 15%;
+    display: flex;
+	flex-direction: row;
+    align-items: center;
+    justify-content: space-between; /* Espaciar puntos uniformemente */
+	opacity: 0; /* Ocultar al inicio */
+    transition: opacity 2s forwards; /* Suavizar transición al mostrar */
+	user-select: none;
+}
+
+.timeline-line {
+    position: absolute;
+    height: 4px;
+    background-color: #fff;
+    /*top: 50%;*/
+    /*z-index: -1;*/
+	width: 0%;
+    left: 50%;
+	/*animation: lineExpandCenter 2s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;*/
+}
+
+.timeline-point {
+	display: flex;
+    flex-direction: column; /* Para apilar el punto y el texto */
+    /*align-items: center; /* Alinear el contenido horizontalmente */
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 1;
+    cursor: pointer;
+    opacity: 0;
+	/*left: 50% + 20px; */
+	transform: scale(0) translateX(var(--from-center));
+    /*animation: pointAppearFromCenter 1s ease-out forwards;*/
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+	letter-spacing: normal;
+}
+
+.timeline-point-only {
+	left: calc(50% - 20px);
+	top: 10%;
+}
+
+/* Actualización de texto centrado */
+.timeline-date {
+    position: relative; /* Posicionamiento absoluto respecto al punto */
+    top: calc(110% + 10px); /* Espacio debajo del punto */
+    left: 110%; /* Posicionamiento centrado horizontalmente */
+    /*transform: translateX(-50%); /* Corrige el desplazamiento para centrar */
+    color: #fff;
+    font-size: 22px;
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    /*display: none;*/
+    /*width: 100px; /* Fijar ancho para centrar */
+	white-space: nowrap; /* Evitar quiebres de línea */
+	animation: slideDownDate 0.5s cubic-bezier(0, 0, 0, 1) forwards, fadeInOpacity 0.5s cubic-bezier(0, 0, 0.68, 0.3) forwards; /* Animación al mostrarse */
+}
+
+/* Modificar estilos para centrar y redimensionar la imagen */
+.timeline-info {
+    position: absolute;
+    top: -375%; /* Mantener la imagen encima */
+    left: -115%; /* Centrar horizontalmente */
+    max-width: 100px; /* Tamaño reducido */
+    max-height: 100px; /* Tamaño reducido */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Añade un efecto de sombra */
+    border-radius: 8px;
+    display: none;
+    transition: all 0.5s ease-out;
+	animation: slideUpInfo 0.5s cubic-bezier(0, 0, 0, 1) forwards, fadeInOpacity 0.5s cubic-bezier(0, 0, 0.68, 0.3) forwards; /* Animación al mostrarse */
+    /*z-index: 10;*/
+}
+
+.timeline-info-audio {
+	box-shadow: 0px 0px 4px 3px rgba(255 255 255); /* Añade un efecto de sombra */
+}
+
+/*.timeline-video {
+    position: absolute; 
+    top: -380%; 
+    left: -115%; 
+    width: 100px; 
+    height: 100px;
+    z-index: 10; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    border-radius: 8px;
+    overflow: hidden; 
+    border: 2px solid #fff; 
+}*/
+
+@keyframes slideUpInfo {
+    from {
+        transform: translateY(50px); /* Comienza desde abajo */
+    }
+    to {
+        transform: translateY(0); /* Termina en su posición original */
+    }
+}
+
+@keyframes slideDownInfo {
+    from {
+        transform: translateY(0); /* Comienza desde abajo */
+    }
+    to {
+        transform: translateY(50px); /* Termina en su posición original */
+    }
+}
+
+@keyframes slideUpDate {
+    from {
+        transform: translate(-300%, 0); /* Comienza desde arriba */
+    }
+    to {
+        transform: translate(-300%, -50px); /* Termina en su posición original */
+    }
+}
+
+@keyframes slideDownDate {
+    from {
+        transform: translate(-300%, -50px); /* Comienza desde arriba */
+    }
+    to {
+        transform: translate(-300%, 0); /* Termina en su posición original */
+    }
+}
+
+@keyframes fadeInOpacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutOpacity {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Línea: Expansión desde el centro */
+@keyframes lineExpandCenter {
+    from {
+        width: 0%;
+        left: 50%;
+    }
+    to {
+        width: 100%;
+        left: 0%;
+    }
+}
+
+/* Puntos: Aparecer y expandirse desde el centro */
+@keyframes pointAppearFromCenter {
+    from {
+        opacity: 0;
+        /*left: 50% - 20px; */
+		transform: scale(0) translateX(var(--from-center));
+    }
+    to {
+        opacity: 1;
+        /*left: var(--finalLeft); /* Variable para dirección */
+		transform: scale(1) translateX(0); 
+    }
+}
+
+@media (max-width: 1080px) {
+    /*.yami-page {
+        gap: 200px;
+        height: 100%;
+        min-height: 100vh;
+    }*/
+
+    .countdownContainer {
+        font-size: 4rem;
+    }
+
+	.countdownContainer #countdown {
+		padding-top: 25%;
+	}
+
+    .timeline-container {
+        flex-direction: column;
+        height: 100%;
+        min-height: 60vh;
+		margin-top: 5%;
+    }
+
+    /*.yami-page-releases::after {
+        width: 4px;
+        height: 100%;
+    }*/
+
+	/*.timeline-date {
+		top: 110%;
+		left: 100%;
+		animation: slideDownDate 0.5s cubic-bezier(0, 0, 0, 1) forwards, fadeInOpacity 0.5s cubic-bezier(0, 0, 0.68, 0.3)
+	}*/
+
+	.timeline-info {
+		top: -80%;
+	}
+
+	@keyframes slideUpInfo {
+		from {
+			transform: translateX(20px); /* Comienza desde abajo */
+		}
+		to {
+			transform: translateX(-75px); /* Termina en su posición original */
+		}
+	}
+	
+	@keyframes slideDownInfo {
+		from {
+			transform: translateX(-75px); /* Comienza desde abajo */
+		}
+		to {
+			transform: translateX(20px); /* Termina en su posición original */
+		}
+	}
+	
+	@keyframes slideUpDate {
+		from {
+			transform: translate(15px, -185%); /* Comienza desde arriba */
+		}
+		to {
+			transform: translate(-50px, -185%); /* Termina en su posición original */
+		}
+	}
+	
+	@keyframes slideDownDate {
+		from {
+			transform: translate(-50px, -185%); /* Comienza desde arriba */
+		}
+		to {
+			transform: translate(15px, -185%); /* Termina en su posición original */
+		}
+	}
+
+	@keyframes lineExpandCenter {
+		from {
+			height: 0%;
+			bottom: 50%;
+		}
+		to {
+			height: 100%;
+			bottom: 0%;
+		}
+	}
+
+	@keyframes pointAppearFromCenter {
+		from {
+			opacity: 0;
+			/*left: 50% - 20px; */
+			transform: scale(0) translateY(var(--from-center));
+		}
+		to {
+			opacity: 1;
+			/*left: var(--finalLeft); /* Variable para dirección */
+			transform: scale(1) translateY(0); 
+		}
+	}
+
+	.timeline-line {
+		height: 0px;
+		width: 4px;
+		left: calc(50% - 2px);
+	}
+
+    .timeline-point {
+        flex-direction: row;
+        align-items: center;
+        /*justify-content: center;*/
+        /*height: var(--release-dot-size);*/
+    }
+
+	.timeline-point-only {
+		left: 0%;
+		top : 40%;
+	}
+
+    /*.yami-page-release-date {
+        width: 100%;
+        justify-content: flex-end;
+        transform: translateX(300%);
+    }*/
 }
 
 /* Fin de la animación */
