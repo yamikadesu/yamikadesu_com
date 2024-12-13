@@ -2457,6 +2457,11 @@
 				image: "assets/latestRelease/AnimaEuphoriA3000.png",
 				audio: "assets/latestRelease/Anima EuphoriA.mp3",
 			},
+			{
+				date: "2022-11-20",
+				image: "assets/latestRelease/PortadaDreams4.PNG",
+				audio: "assets/latestRelease/Dreams.mp3",
+			},
 		];
 
 		// Función para formatear la fecha
