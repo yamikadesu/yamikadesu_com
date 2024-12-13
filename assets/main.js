@@ -2600,12 +2600,15 @@
 			// Cerrar otros puntos abiertos
 			closeAllPoints();
 		
+			if(backgroundMusic){
+				backgroundMusic.play();
+			}
 			// Si ya hay contenido visible en este punto, cerrarlo
 			if (existingImage || existingDate || existingVideo) {
+			//if (backgroundMusic) {
 				//point.innerHTML = ""; // Limpiar contenido del punto
 				//timelineContainer.style.marginTop = "30px"; // Resetear margen
 				//audioElement.play(); // Reanudar música de fondo
-				backgroundMusic.play();
 				return;
 			}
 		
