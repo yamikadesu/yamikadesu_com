@@ -463,8 +463,8 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 			bottom: 50%;
 		}
 		to {
-			height: 100%;
-			bottom: 0%;
+			height: 97%;
+    		bottom: 3%;
 		}
 	}
 

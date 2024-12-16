@@ -2444,7 +2444,7 @@
 
 
 		let currentPage = 0;
-		const maxPointsPerPage = 5;
+		const maxPointsPerPage = 4;
 
 		// Timeline Configuración
 		const timelineData = [
@@ -2462,6 +2462,11 @@
 				date: "2022-11-20",
 				image: "assets/latestRelease/PortadaDreams4.PNG",
 				audio: "assets/latestRelease/Dreams.mp3",
+			},
+			{
+				date: "2023-05-30",
+				image: "assets/latestRelease/EstrellitaRadiante.png",
+				audio: "assets/latestRelease/Estrellita Radiante.mp3",
 			},
 		];
 
