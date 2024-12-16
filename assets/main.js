@@ -2724,6 +2724,8 @@
 		
 			// Mostrar el contenedor del contador con animación de opacidad
 			setTimeout(() => {
+				const wrapper = document.getElementById("wrapper");
+				wrapper.style.display = "none";
 				main.style.display = "none";
 				hiddenContainer.style.display = "flex";
 				document.body.style.overflow = 'hidden';

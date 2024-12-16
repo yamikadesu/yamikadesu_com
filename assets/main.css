@@ -91,7 +91,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
     position: relative;
     width: 55%;
     margin-top: 10%; /* Margen entre el contador y la timeline */
-	margin-bottom: 15%;
+	margin-bottom: 25%;
     display: flex;
 	flex-direction: row;
     align-items: center;
@@ -384,6 +384,16 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
         justify-content: flex-end;
         transform: translateX(300%);
     }*/
+}
+
+@media(max-width: 580px){
+	.countdownContainer {
+        font-size: 3rem;
+    }
+
+	.timeline-container {
+		margin-top: 15%;
+    }
 }
 
 /* Fin de la animación */
