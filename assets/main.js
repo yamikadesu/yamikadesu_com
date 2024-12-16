@@ -2443,7 +2443,8 @@
 
 
 
-
+		let currentPage = 0;
+		const maxPointsPerPage = 5;
 
 		// Timeline Configuración
 		const timelineData = [
@@ -2530,62 +2531,97 @@
 		// Crear la timeline dinámica con animaciones
 		function createTimeline(data) {
 			const container = document.getElementById("timeline-container");
+			container.innerHTML = ""; // Limpiar el contenedor
+		
+			// Crear la flecha izquierda
+			if (currentPage > 0) {
+				const leftArrow = document.createElement("div");
+				leftArrow.classList.add("timeline-arrow", "timeline-arrow-left");
+				leftArrow.innerHTML = `
+					<svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+						<path d="m13.789 7.155c.141-.108.3-.157.456-.157.389 0 .755.306.755.749v8.501c0 .445-.367.75-.755.75-.157 0-.316-.05-.457-.159-1.554-1.203-4.199-3.252-5.498-4.258-.184-.142-.29-.36-.29-.592 0-.23.107-.449.291-.591 1.299-1.002 3.945-3.044 5.498-4.243z" fill="white"/>
+					</svg>`; // Flecha izquierda
+				leftArrow.style.animation = "fadeInArrowLeft 2s ease-out forwards"; // Animación inicial
+				leftArrow.addEventListener("click", () => {
+					currentPage--;
+					createTimeline(data);
+				});
+				container.appendChild(leftArrow);
+			} else {
+				const leftPlaceholder = document.createElement("div");
+				leftPlaceholder.classList.add("timeline-arrow");
+				container.appendChild(leftPlaceholder); // Espacio vacío si no hay flecha
+			}
+		
+			// Crear la zona central para los puntos y la línea
+			const content = document.createElement("div");
+			content.classList.add("timeline-content");
+		
+			// Calcular los datos de la página actual
+			const startIndex = currentPage * maxPointsPerPage;
+			const endIndex = Math.min(data.length, startIndex + maxPointsPerPage);
+			const pageData = data.slice(startIndex, endIndex);
+			const centerIndex = (pageData.length - 1) / 2; // Centro de los datos de la página actual
 
 			// Si hay más de un punto, agregar la línea con animación
 			if (data.length > 1) {
 				const line = document.createElement("div");
 				line.classList.add("timeline-line");
-				line.style.animation = "lineExpandCenter 2s cubic-bezier(0.4, 0.0, 0.2, 1) forwards";
-				container.appendChild(line);
+				if(pageData.length > 1){
+					line.style.animation = "lineExpandCenter 2s cubic-bezier(0.4, 0.0, 0.2, 1) forwards";
+				}
+				else{
+					line.style.animation = "lineExpandCenterOne 2s cubic-bezier(0.4, 0.0, 0.2, 1) forwards";
+				}
+				content.appendChild(line);
 			}
-
-			const centerIndex = (data.length - 1) / 2; // Centro del array (puede ser decimal si es impar)
-			//const maxDelay = Math.floor(data.length / 2) * 0.5; // Tiempo máximo de retraso
-
-			// Crear los puntos de la timeline con animación retardada
-			data.forEach((item, index) => {
+		
+		
+			// Crear los puntos de la página actual con animación retardada
+			pageData.forEach((item, index) => {
 				const point = document.createElement("div");
-				
 				point.classList.add("timeline-point");
 				point.style.setProperty("--from-center", `0`);
-				if (data.length === 1){
+		
+				if (pageData.length === 1) {
 					point.classList.add("timeline-point-only");
-					//point.style.setProperty("left", "calc(50% - 20px)");
 					point.style.animation = `pointAppearFromCenter 1s ease-out forwards`;
-				}
-				else if(data.length > 1){
-					//const timelineLine = document.getElementById("timeline-container");
-					//const translateX = (index - (data.length - 1) / 2) * 100; // Ajustar según el índice
-					//point.style.setProperty("--translateX", `${translateX}%`);
-
-					//const fromCenter = ((data.length - 1) / 2 - index) * 100; // 100px por paso
-					
-					
-					// Añadir animación con retardo
-					//point.style.animationDelay = `${index * 0.5}s`;
-					
+				} else if (pageData.length > 1) {
 					const fromCenter = Math.abs(centerIndex - index); // Distancia al centro
 					const animationDelay = (fromCenter * 0.3).toFixed(2); // Tiempo basado en la distancia
-
 					point.style.animationDelay = `${animationDelay}s`;
-					
-					var doneOnceAnim = true;
-					
-					// Detectar fin de la animación del contenedor
+		
 					setTimeout(() => {
-						if(doneOnceAnim){
-							//const indexHTML = Array.from(point.parentElement.children).indexOf(point);
-							// Aplicar animación personalizada
-							point.style.animation = `pointAppearFromCenter 1s ease-out forwards`;
-							doneOnceAnim = false;
-						}
+						point.style.animation = `pointAppearFromCenter 1s ease-out forwards`;
 					}, animationDelay * 900);
 				}
-			
+		
 				// Añadir evento al clic en cada punto
 				point.addEventListener("click", () => handleTimelineClick(item, point));
-				container.appendChild(point);
+				content.appendChild(point);
 			});
+		
+			container.appendChild(content);
+		
+			// Crear la flecha derecha
+			if (endIndex < data.length) {
+				const rightArrow = document.createElement("div");
+				rightArrow.classList.add("timeline-arrow", "timeline-arrow-right");
+				rightArrow.innerHTML = `
+					<svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+						<path d="m10.211 7.155c-.141-.108-.3-.157-.456-.157-.389 0-.755.306-.755.749v8.501c0 .445.367.75.755.75.157 0 .316-.05.457-.159 1.554-1.203 4.199-3.252 5.498-4.258.184-.142.29-.36.29-.592 0-.23-.107-.449-.291-.591-1.299-1.002-3.945-3.044-5.498-4.243z" fill="white"/>
+					</svg>`; // Flecha derecha
+				rightArrow.style.animation = "fadeInArrowRight 2s ease-out forwards"; // Animación inicial
+				rightArrow.addEventListener("click", () => {
+					currentPage++;
+					createTimeline(data);
+				});
+				container.appendChild(rightArrow);
+			} else {
+				const rightPlaceholder = document.createElement("div");
+				rightPlaceholder.classList.add("timeline-arrow");
+				container.appendChild(rightPlaceholder); // Espacio vacío si no hay flecha
+			}
 		}
 
 		function handleTimelineClick(item, point) {
