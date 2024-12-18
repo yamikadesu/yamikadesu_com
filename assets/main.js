@@ -2468,6 +2468,11 @@
 				image: "assets/latestRelease/EstrellitaRadiante.png",
 				audio: "assets/latestRelease/Estrellita Radiante.mp3",
 			},
+			{
+				date: "2023-08-23",
+				image: "assets/latestRelease/SummerSunrise.png",
+				audio: "assets/latestRelease/Summer Sunrise (Remix).mp3",
+			},
 		];
 
 		// Función para formatear la fecha
@@ -2537,6 +2542,10 @@
 		function createTimeline(data) {
 			const container = document.getElementById("timeline-container");
 			container.innerHTML = ""; // Limpiar el contenedor
+			const backgroundMusic = document.getElementById('background-music'); // Asegúrate de que exista este elemento
+			if(backgroundMusic){
+				backgroundMusic.play();
+			}
 		
 			// Crear la flecha izquierda
 			if (currentPage > 0) {
