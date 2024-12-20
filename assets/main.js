@@ -2473,6 +2473,11 @@
 				image: "assets/latestRelease/SummerSunrise.png",
 				audio: "assets/latestRelease/Summer Sunrise (Remix).mp3",
 			},
+			{
+				date: "2024-02-16",
+				image: "assets/latestRelease/A Star in the Sky.png",
+				audio: "assets/latestRelease/A Star in the Sky.mp3",
+			},
 		];
 
 		// Función para formatear la fecha
