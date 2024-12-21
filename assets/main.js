@@ -2478,6 +2478,11 @@
 				image: "assets/latestRelease/A Star in the Sky.png",
 				audio: "assets/latestRelease/A Star in the Sky.mp3",
 			},
+			{
+				date: "2024-05-13",
+				image: "assets/latestRelease/NanaDeLosLirios.png",
+				audio: "assets/latestRelease/Nana de los Lirios.mp3",
+			},
 		];
 
 		// Función para formatear la fecha
