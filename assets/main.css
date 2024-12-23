@@ -39,6 +39,47 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
     }
 }
 
+#background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* Asegura que partes fuera del viewport no se muestren */
+    z-index: -1; /* Coloca el fondo detrás de todo */
+}
+
+#background-image {
+	--from-scale: 1; /* Valor inicial de escala */
+    --to-scale: 1;   /* Valor final de escala */
+    --from-xOffset: -1600px; /* Offset inicial en X */
+    --to-xOffset: -800px;   /* Offset final en X */
+    --from-yOffset: -1600px; /* Offset inicial en Y */
+    --to-yOffset: -800px;   /* Offset final en Y */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-1600px, -800px) scale(var(--from-scale)); /* Centra la imagen */
+    max-width: none; /* Asegura que la imagen no se limite al contenedor */
+    min-width: 100%; /* La imagen cubre el ancho del viewport */
+    min-height: 100%; /* La imagen cubre la altura del viewport */
+    transition: transform 2s ease, width 2s ease, height 2s ease; /* Transiciones para zoom y desplazamientos */
+	opacity: 0;
+}
+
+.animated-background {
+    animation: animateBackground 2s ease-out forwards;
+}
+
+@keyframes animateBackground {
+    0% {
+        transform: translate(var(--from-xOffset), var(--from-yOffset)) scale(var(--from-scale));
+    }
+    100% {
+        transform: translate(var(--to-xOffset), var(--to-yOffset)) scale(var(--to-scale));
+    }
+}
+
 .countdownContainer {
     text-align: center;
     font-size: 8vw;
@@ -75,6 +116,10 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 .start-animation {
     animation: fadeAndScaleIn 5s forwards cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.start-animation-background {
+    animation: fadeInOpacityBackground 3s forwards ease-out;
 }
 
 /* Media Queries para diferentes tamaños de pantalla */
@@ -242,6 +287,15 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
     }
     to {
         transform: translate(-300%, 0); /* Termina en su posición original */
+    }
+}
+
+@keyframes fadeInOpacityBackground {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.8;
     }
 }
 
