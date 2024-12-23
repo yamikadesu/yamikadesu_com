@@ -2483,6 +2483,11 @@
 				image: "assets/latestRelease/NanaDeLosLirios.png",
 				audio: "assets/latestRelease/Nana de los Lirios.mp3",
 			},
+			{
+				date: "2024-06-06",
+				image: "assets/latestRelease/parasites_2 3000.png",
+				audio: "assets/latestRelease/Parasites.mp3",
+			},
 		];
 
 		// Función para formatear la fecha
