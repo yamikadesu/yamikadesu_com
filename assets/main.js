@@ -2450,6 +2450,7 @@
 		const timelineData = [
 			{
 				date: "2021-12-29",
+				name : "Anima MemoriA",
 				image: "assets/latestRelease/Anima Memoria 2.0.png",
 				audio: "assets/latestRelease/Anima MemoriA.mp3",
 				scale: 1,
@@ -2460,6 +2461,7 @@
 			},
 			{
 				date: "2022-07-10",
+				name : "Anima EuphoriA",
 				image: "assets/latestRelease/AnimaEuphoriA3000.png",
 				audio: "assets/latestRelease/Anima EuphoriA.mp3",
 				scale: 1,
@@ -2470,6 +2472,7 @@
 			},
 			{
 				date: "2022-11-20",
+				name : "Dreams",
 				image: "assets/latestRelease/PortadaDreams4.PNG",
 				audio: "assets/latestRelease/Dreams.mp3",
 				scale: 1,
@@ -2480,6 +2483,7 @@
 			},
 			{
 				date: "2023-05-30",
+				name : "Estrellita Radiante",
 				image: "assets/latestRelease/EstrellitaRadiante.png",
 				audio: "assets/latestRelease/Estrellita Radiante.mp3",
 				scale: 1,
@@ -2490,6 +2494,7 @@
 			},
 			{
 				date: "2023-08-23",
+				name : "Summer Sunrise",
 				image: "assets/latestRelease/SummerSunrise.png",
 				audio: "assets/latestRelease/Summer Sunrise (Remix).mp3",
 				scale: 1,
@@ -2500,6 +2505,7 @@
 			},
 			{
 				date: "2024-02-16",
+				name : "A Star in the Sky",
 				image: "assets/latestRelease/A Star in the Sky.png",
 				audio: "assets/latestRelease/A Star in the Sky.mp3",
 				scale: 1,
@@ -2510,6 +2516,7 @@
 			},
 			{
 				date: "2024-05-13",
+				name : "Nana de los Lirios",
 				image: "assets/latestRelease/NanaDeLosLirios.png",
 				audio: "assets/latestRelease/Nana de los Lirios.mp3",
 				scale: 1,
@@ -2520,6 +2527,7 @@
 			},
 			{
 				date: "2024-06-06",
+				name : "Parasites",
 				image: "assets/latestRelease/parasites_2 3000.png",
 				audio: "assets/latestRelease/Parasites.mp3",
 				scale: 1,
@@ -2530,6 +2538,7 @@
 			},
 			{
 				date: "2024-12-29",
+				name : "Limitless Skies",
 				image: "assets/latestRelease/limitless skies fondo_con_logo_2650x2650(final).png",
 				audio: "assets/latestRelease/Limitless Skies (Official Version).mp3",
 				scale: 1,
@@ -2841,10 +2850,17 @@
 
 
 			const dateElement = document.createElement("div");
-			dateElement.textContent = formatDate(item.date); // Formatear la fecha
 			dateElement.classList.add("timeline-date");
+			const txtNameElement = document.createElement("div");
+			txtNameElement.classList.add("timeline-inner-name");
+			txtNameElement.innerHTML = `${item.name}`; // Formatear la fecha
+			const txtDateElement = document.createElement("div");
+			txtDateElement.classList.add("timeline-inner-date");
+			txtDateElement.innerHTML = `${formatDate(item.date)}`;
 			//dateElement.style.animation = "dateSlideDown 0.5s cubic-bezier(0, 0, 0, 1)"; // Animación al aparecer
 			point.appendChild(dateElement);
+			dateElement.appendChild(txtNameElement);
+			dateElement.appendChild(txtDateElement);
 		
 			// Mostrar la imagen y el texto
 			imageElement.style.display = "block";

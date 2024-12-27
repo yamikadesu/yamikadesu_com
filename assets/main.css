@@ -167,7 +167,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 .timeline-point {
     display: flex;
-    flex-direction: column; /* Para apilar el punto y el texto */
+    flex-direction: row; /* Para apilar el punto y el texto */
     position: relative;
     width: 30px;
     height: 30px;
@@ -209,17 +209,28 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 /* Actualización de texto centrado */
 .timeline-date {
     position: relative; /* Posicionamiento absoluto respecto al punto */
-    top: calc(110% + 10px); /* Espacio debajo del punto */
-    left: 110%; /* Posicionamiento centrado horizontalmente */
+    top: calc(-10px); /* Espacio debajo del punto */
+    /*left: -250%; /* Posicionamiento centrado horizontalmente */
     /*transform: translateX(-50%); /* Corrige el desplazamiento para centrar */
     color: #fff;
     font-size: 22px;
+	min-width: 350px;
     text-align: center;
     font-family: 'Roboto Mono', monospace;
     /*display: none;*/
     /*width: 100px; /* Fijar ancho para centrar */
-	white-space: nowrap; /* Evitar quiebres de línea */
+	white-space: normal; /* Evitar quiebres de línea */
 	animation: slideDownDate 0.5s cubic-bezier(0, 0, 0, 1) forwards, fadeInOpacity 0.5s cubic-bezier(0, 0, 0.68, 0.3) forwards; /* Animación al mostrarse */
+}
+
+.timeline-inner-name {
+	position: relative;
+	left: -45%;
+}
+.timeline-inner-date {
+	position: relative;
+	left: -45%;
+	font-weight: normal;
 }
 
 /* Modificar estilos para centrar y redimensionar la imagen */
@@ -274,21 +285,39 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 @keyframes slideUpDate {
     from {
-        transform: translate(-300%, 0); /* Comienza desde arriba */
+        transform: translateY(50px); /* Comienza desde abajo */
     }
     to {
-        transform: translate(-300%, -50px); /* Termina en su posición original */
+        transform: translateY(0); /* Termina en su posición original */
     }
 }
 
 @keyframes slideDownDate {
     from {
-        transform: translate(-300%, -50px); /* Comienza desde arriba */
+        transform: translateY(0); /* Comienza desde abajo */
     }
     to {
-        transform: translate(-300%, 0); /* Termina en su posición original */
+        transform: translateY(50px); /* Termina en su posición original */
     }
 }
+
+/*@keyframes slideUpDate {
+    from {
+        transform: translate(-300%, 0); 
+    }
+    to {
+        transform: translate(-300%, -50px); 
+    }
+}*/
+
+/*@keyframes slideDownDate {
+    from {
+        transform: translate(-300%, -50px); 
+    }
+    to {
+        transform: translate(-300%, 0); 
+    }
+}*/
 
 @keyframes fadeInOpacityBackground {
     from {
@@ -465,11 +494,18 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
         height: 100%;
     }*/
 
-	/*.timeline-date {
-		top: 110%;
-		left: 100%;
-		animation: slideDownDate 0.5s cubic-bezier(0, 0, 0, 1) forwards, fadeInOpacity 0.5s cubic-bezier(0, 0, 0.68, 0.3)
-	}*/
+	.timeline-date {
+		top: 0; 
+		left: 80%; 
+		text-align: left; 
+	}
+
+	.timeline-inner-name {
+		left: 0;
+	}
+	.timeline-inner-date {
+		left: 0;
+	}
 
 	.timeline-info {
 		top: -100%;
@@ -492,25 +528,43 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 			transform: translateX(20px); /* Termina en su posición original */
 		}
 	}
-	
+
 	@keyframes slideUpDate {
 		from {
-			transform: translate(15px, -185%); /* Comienza desde arriba */
+			transform: translateX(20px); /* Comienza desde abajo */
 		}
 		to {
-			transform: translate(-50px, -185%); /* Termina en su posición original */
+			transform: translateX(-75px); /* Termina en su posición original */
 		}
 	}
 	
 	@keyframes slideDownDate {
 		from {
-			transform: translate(-50px, -185%); /* Comienza desde arriba */
+			transform: translateX(-75px); /* Comienza desde abajo */
 		}
 		to {
-			transform: translate(15px, -185%); /* Termina en su posición original */
+			transform: translateX(20px); /* Termina en su posición original */
 		}
 	}
-
+	
+	/*@keyframes slideUpDate {
+		from {
+			transform: translate(15px, -185%);
+		}
+		to {
+			transform: translate(-50px, -185%); 
+		}
+	}
+	
+	@keyframes slideDownDate {
+		from {
+			transform: translate(-50px, -185%);
+		}
+		to {
+			transform: translate(15px, -185%); 
+		}
+	}
+*/
 	@keyframes lineExpandCenter {
 		from {
 			height: 0%;
@@ -573,6 +627,10 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 }
 
 @media(max-width: 580px){
+	.timeline-date {
+		max-width: 150px;
+		min-width: 150px;
+	}
 	.countdownContainer {
         font-size: 3rem;
     }
