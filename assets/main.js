@@ -3048,8 +3048,8 @@
 
 				// Ajustar la fecha local sumando el desfase (convertido a milisegundos)
 				const nowUTC = new Date(now.getTime() + offsetMinutes * 60 * 1000);
-				//console.log("Hora local:", now.toISOString());
-				//console.log("Hora UTC:", nowUTC.toISOString());
+				console.log("Hora local:", now.toISOString());
+				console.log("Hora UTC:", nowUTC.toISOString());
 				const targetDateUTC = Date.UTC(2024, 11, 28, 23, 0, 0); // 2024-12-29 00:00:00 en UTC+1
 
 				// Ajustar manualmente para UTC+1
