@@ -3042,16 +3042,8 @@
 			const countdownElement = document.getElementById("countdown");
 			const backgroundImage = document.getElementById('background-image');
 			function updateCountdown() {
-				const now = new Date();
-				// Obtener el desfase en minutos (negativo si estás por delante de UTC, positivo si estás por detrás)
-				const offsetMinutes = now.getTimezoneOffset();
-
-				// Ajustar la fecha local sumando el desfase (convertido a milisegundos)
-				const nowUTC = new Date(now.getTime() + offsetMinutes * 60 * 1000);
-				console.log("Hora local:", now.toISOString());
-				console.log("Hora UTC:", nowUTC.toISOString());
+				const nowUTC = Date.now();
 				const targetDateUTC = Date.UTC(2024, 11, 28, 23, 0, 0); // 2024-12-29 00:00:00 en UTC+1
-
 				// Ajustar manualmente para UTC+1
 				//const targetDate = new Date('2024-12-29T00:00:00'); // Cambia esta fecha según sea necesario
 
