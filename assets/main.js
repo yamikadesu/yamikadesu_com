@@ -2450,45 +2450,204 @@
 		const timelineData = [
 			{
 				date: "2021-12-29",
+				name : "Anima MemoriA",
 				image: "assets/latestRelease/Anima Memoria 2.0.png",
 				audio: "assets/latestRelease/Anima MemoriA.mp3",
+				youtube: "https://youtu.be/8SKOE_SFINA",
+				spotify: "https://open.spotify.com/track/68ph2GFUoZMw5vj2MjwtJ1",
+				apple: "https://music.apple.com/us/album/anima-memoria-anniversary-edition/1661769494",
+				scale: 1,
+				xOffset: -1180,
+				yOffset: -2500,
+				//xOffset: -40,
+				//yOffset: -78.5,
 			},
 			{
 				date: "2022-07-10",
+				name : "Anima EuphoriA",
 				image: "assets/latestRelease/AnimaEuphoriA3000.png",
 				audio: "assets/latestRelease/Anima EuphoriA.mp3",
+				youtube: "https://youtu.be/EgQXvosQ9pE",
+				spotify: "https://open.spotify.com/track/5TnPuEwpLFYjTFJeEFlh55",
+				apple: "https://music.apple.com/us/album/anima-euphoria-feat-nikki-simmons/1659233229",
+				scale: 1,
+				xOffset: 0,
+				yOffset: -1800,
+				//xOffset: -12.6,
+				//yOffset: -60.5,
 			},
 			{
 				date: "2022-11-20",
+				name : "Dreams",
 				image: "assets/latestRelease/PortadaDreams4.PNG",
 				audio: "assets/latestRelease/Dreams.mp3",
+				youtube: "https://youtu.be/YeJzRmBI3_w",
+				spotify: "https://open.spotify.com/track/4wi5hs2Dy4gStomYwm7RJ3",
+				apple: "https://music.apple.com/us/album/dreams-feat-%E6%98%A5%E6%9D%A5/1675428981",
+				scale: 1,
+				xOffset: -700,
+				yOffset: -800,
+				//xOffset: -32.6,
+				//yOffset: -24.5,
 			},
 			{
 				date: "2023-05-30",
+				name : "Estrellita Radiante",
 				image: "assets/latestRelease/EstrellitaRadiante.png",
 				audio: "assets/latestRelease/Estrellita Radiante.mp3",
+				youtube: "https://youtu.be/bDA41tWyfEM",
+				spotify: "https://open.spotify.com/track/0aQabzpBFPuPOOGC1eL3Az",
+				apple: "https://music.apple.com/us/album/estrellita-radiante-feat-nekane/1690380013",
+				scale: 1,
+				xOffset: -2700,
+				yOffset: -2700,
+				//xOffset: -70, //xOffset: -67,
+				//yOffset: -72, //yOffset: -75.5,
 			},
 			{
 				date: "2023-08-23",
+				name : "Summer Sunrise",
 				image: "assets/latestRelease/SummerSunrise.png",
 				audio: "assets/latestRelease/Summer Sunrise (Remix).mp3",
+				youtube: "https://youtu.be/0nM-oybwcG0",
+				spotify: "https://open.spotify.com/track/2gLXh6SduGpcKWy9Hww6rt",
+				apple: "https://music.apple.com/us/album/summer-sunrise-single/1712516005",
+				scale: 1,
+				xOffset: -1780,
+				yOffset: -2500,
+				//xOffset: -60,
+				//yOffset: -78.5,
 			},
 			{
 				date: "2024-02-16",
+				name : "A Star in the Sky",
 				image: "assets/latestRelease/A Star in the Sky.png",
 				audio: "assets/latestRelease/A Star in the Sky.mp3",
+				youtube: "https://www.youtube.com/watch?v=-UcHLFdHlA0&list=OLAK5uy_nv0huGBrSmJHL3NlJKOgh_xsPVYbnPyvk",
+				spotify: "https://open.spotify.com/album/3AmLPLsQccTleKikGku8fV",
+				apple: "https://music.apple.com/us/album/a-star-in-the-sky-ep/1773693185",
+				scale: 1,
+				xOffset: -1780,
+				yOffset: -2000,
+				//xOffset: -60,
+				//yOffset: -65.5,
 			},
 			{
 				date: "2024-05-13",
+				name : "Nana de los Lirios",
 				image: "assets/latestRelease/NanaDeLosLirios.png",
 				audio: "assets/latestRelease/Nana de los Lirios.mp3",
+				youtube: "https://www.youtube.com/watch?v=0mB-4Xb93B8&list=OLAK5uy_kL3KabriCaKlBsWGFfCg0YwW75mWY5368",
+				spotify: "https://open.spotify.com/album/0FxuxYUhxGVbJhHi7t8S16",
+				apple: "https://music.apple.com/us/album/nana-de-los-lirios-single/1745926206",
+				scale: 1,
+				xOffset: 0,
+				yOffset: -2500,
+				//xOffset: -32.6,
+				//yOffset: -78.5,
 			},
 			{
 				date: "2024-06-06",
+				name : "Parasites",
 				image: "assets/latestRelease/parasites_2 3000.png",
 				audio: "assets/latestRelease/Parasites.mp3",
+				youtube: "https://www.youtube.com/watch?v=dbTAHNilLw0&list=OLAK5uy_lLVd-dqyw5l3OQgLw5JsuzeymAabih3fM",
+				spotify: "https://open.spotify.com/album/0E8ajiSwtVTreu8uWT03GE",
+				apple: "https://music.apple.com/us/album/parasites-single/1745943392",
+				scale: 1,
+				xOffset: -1780,
+				yOffset: -1000,
+				//xOffset: -60,
+				//yOffset: -35.5,
+			},
+			{
+				date: "2024-12-29",
+				name : "Limitless Skies",
+				image: "assets/latestRelease/limitless skies fondo_con_logo_2650x2650(final).png",
+				audio: "assets/latestRelease/Limitless Skies (Official Version).mp3",
+				youtube: "https://www.youtube.com/watch?v=dbTAHNilLw0&list=PLgYKRyZVllltbhsVJAbDcWLtLC2nIAXHg",
+				spotify: "https://open.spotify.com/playlist/7gRcyjrluV54QlKH0BGvV4",
+				apple: "https://music.apple.com/us/artist/yamikadesu/1594208065",
+				scale: 1,
+				xOffset: -1320,
+				yOffset: -1700,
+				//xOffset: -40,
+				//yOffset: -65.5,
 			},
 		];
+
+		function manualPause() {
+			const backgroundMusic = document.getElementById('background-music');
+			backgroundMusic.pause();
+			shouldPlayMusic = false; // Evita que se reproduzca automáticamente
+		}
+		
+		function manualPlay() {
+			const backgroundMusic = document.getElementById('background-music');
+			backgroundMusic.play();
+			shouldPlayMusic = true; // Permite la reproducción automática al volver
+		}
+
+		let currentXOffset = -1600; // Posición actual de xOffset
+		let currentYOffset = -800; // Posición actual de yOffset
+		let currentScale = 1;   // Escala actual del fondo
+
+		function updateBackground(scale, xOffset, yOffset) {
+			const backgroundImage = document.getElementById('background-image');
+			
+			
+			// Cambiar imagen de fondo
+			//backgroundContainer.style.backgroundImage = `url(assets/latestRelease/limitless skies fondo.png)`;
+			
+			// Simular desplazamiento y zoom (valores ejemplo; pueden ajustarse)
+			//const zoomLevel = 1.5; // Nivel de zoom
+			//const xOffset = Math.random() * 50 - 25; // Desplazamiento horizontal
+			//const yOffset = Math.random() * 50 - 25; // Desplazamiento vertical
+			const viewportWidth = window.innerWidth;
+			const viewportHeight = window.innerHeight;
+			
+			// Límite inferior dinámico
+			const minXOffset = -viewportWidth / 2.0; // Punto inicial siempre es -viewportWidth/2
+			const minYOffset = -viewportHeight / 2.0; // Punto inicial siempre es -viewportHeight/2
+			
+			// Desplazamientos máximos para evitar bordes negros
+			const maxXOffset = 0.5 * viewportWidth - 3000;
+    		const maxYOffset = 0.5 * viewportHeight - 3000;
+			
+			// Limitar desplazamientos
+			//const clampedX = Math.min(maxXOffset, Math.max(-maxXOffset, xOffset));
+			//const clampedY = Math.min(maxYOffset, Math.max(-maxYOffset, yOffset));
+			//const clampedX = Math.max(-maxXOffset, Math.min(maxXOffset, xOffset));
+    		//const clampedY = Math.max(-maxYOffset, Math.min(maxYOffset, yOffset));
+			// Desplazamientos ajustados
+			const clampedX = Math.min(minXOffset, Math.max(xOffset, maxXOffset));
+			const clampedY = Math.min(minYOffset, Math.max(yOffset, maxYOffset));
+			
+			// Actualizar las variables actuales
+			currentXOffset = clampedX;
+			currentYOffset = clampedY;
+			currentScale = scale;
+
+			backgroundImage.style.setProperty('--from-scale', getComputedStyle(backgroundImage).getPropertyValue('--to-scale') || 1);
+			backgroundImage.style.setProperty('--from-xOffset', getComputedStyle(backgroundImage).getPropertyValue('--to-xOffset') || '-1600px');
+			backgroundImage.style.setProperty('--from-yOffset', getComputedStyle(backgroundImage).getPropertyValue('--to-yOffset') || '-800px');
+			backgroundImage.style.setProperty('--to-scale', scale);
+			backgroundImage.style.setProperty('--to-xOffset', `${clampedX}px`);
+			backgroundImage.style.setProperty('--to-yOffset', `${clampedY}px`);
+			backgroundImage.style.opacity = 0.8;
+
+			// Calcular el desplazamiento
+			//const offset = scale * 50;
+
+			backgroundImage.classList.remove('start-animation-background');
+			backgroundImage.classList.remove('animated-background');
+			// Actualizar transformación y posición			
+			//backgroundImage.style.transform = `scale(${scale}) translate(${xOffset}%, ${yOffset}%)`;
+			//backgroundImage.style.top = `${offset}%`;
+			//backgroundImage.style.left = `${offset}%`;
+			void backgroundImage.offsetWidth; // Forzar reflujo para reiniciar la animación
+    		backgroundImage.classList.add('animated-background');
+		}
 
 		// Función para formatear la fecha
 		function formatDate(dateString) {
@@ -2557,10 +2716,7 @@
 		function createTimeline(data) {
 			const container = document.getElementById("timeline-container");
 			container.innerHTML = ""; // Limpiar el contenedor
-			const backgroundMusic = document.getElementById('background-music'); // Asegúrate de que exista este elemento
-			if(backgroundMusic){
-				backgroundMusic.play();
-			}
+			manualPlay();
 		
 			// Crear la flecha izquierda
 			if (currentPage > 0) {
@@ -2652,6 +2808,7 @@
 				container.appendChild(rightPlaceholder); // Espacio vacío si no hay flecha
 			}
 		}
+		let activeAudio = null;
 
 		function handleTimelineClick(item, point) {
 			const existingImage = point.querySelector("img");
@@ -2659,15 +2816,11 @@
 			const existingVideo = point.querySelector("iframe");
 			//const timelineContainer = document.getElementById("timeline-container");
 			//const audioElement = document.getElementById("background-music");
-			const backgroundMusic = document.getElementById('background-music'); // Asegúrate de que exista este elemento
-			let activeAudio = null;
-
+			activeAudio = null;
 			// Cerrar otros puntos abiertos
 			closeAllPoints();
 		
-			if(backgroundMusic){
-				backgroundMusic.play();
-			}
+			manualPlay();
 			// Si ya hay contenido visible en este punto, cerrarlo
 			if (existingImage || existingDate || existingVideo) {
 			//if (backgroundMusic) {
@@ -2683,17 +2836,17 @@
 			imageElement.classList.add("timeline-info");
 			//imageElement.style.animation = "imageSlideUp 0.5s cubic-bezier(0, 0, 0, 1)"; // Animación al aparecer
 			point.appendChild(imageElement);
-		
+			
 			imageElement.addEventListener('click', (event) => {
 				event.stopPropagation();
 				// Si hay un video abierto, lo cerramos
-				if (activeAudio) {
+				if (activeAudio != null) {
 					if (activeAudio.parentElement) {
 						activeAudio.parentElement.removeChild(activeAudio);
 					}
 					imageElement.classList.remove("timeline-info-audio");
 					activeAudio = null;
-					backgroundMusic.play(); // Reanudar la música
+					manualPlay();
 					return;
 				}
 		
@@ -2717,24 +2870,108 @@
 					imageElement.parentElement.removeChild(imageElement);
 				}*/
 
+				manualPause(); // Pausar la música de fondo
+				/*if (item.date === "2024-12-29") {
+					window.open("", "_blank"); // TODO!
+					return;
+				}*/
 				activeAudio = audioElement; // Marcar el punto como activo
 				activeAudio.play();
-				backgroundMusic.pause(); // Pausar la música de fondo
 			});
 
 
 
 
 			const dateElement = document.createElement("div");
-			dateElement.textContent = formatDate(item.date); // Formatear la fecha
 			dateElement.classList.add("timeline-date");
+			const txtNameElement = document.createElement("div");
+			txtNameElement.classList.add("timeline-inner-name");
+			txtNameElement.innerHTML = `${item.name}`; // Formatear la fecha
+			const txtDateElement = document.createElement("div");
+			txtDateElement.classList.add("timeline-inner-date");
+			txtDateElement.innerHTML = `${formatDate(item.date)}`;
 			//dateElement.style.animation = "dateSlideDown 0.5s cubic-bezier(0, 0, 0, 1)"; // Animación al aparecer
+
+			// Crear el contenedor de los iconos
+			const iconsContainer = document.createElement("div");
+			iconsContainer.classList.add("icons-container");
+
+			// Iconos individuales
+			const youtubeIcon = document.createElement("a");
+			youtubeIcon.href = item.youtube;
+			youtubeIcon.target = "_blank"; // Abrir en una nueva pestaña
+			youtubeIcon.innerHTML = `<svg aria-labelledby="icon-title"><title id="icon-title">YouTube</title><use xlink:href="assets/icons.svg#youtube-alt"></use></svg>`;
+			// Configurar el color del SVG para YouTube
+			//const youtubeSvg = youtubeIcon.querySelector("svg");
+			//youtubeSvg.setAttribute("fill", "#FF0000"); // Rojo de YouTube
+
+			youtubeIcon.addEventListener("click", (event) => {
+				event.stopPropagation();
+				const backgroundMusic = document.getElementById('background-music'); // Asegúrate de que exista este elemento
+				if(activeAudio != null && !activeAudio.paused){
+					activeAudio.pause();
+				}
+				else if (!backgroundMusic.paused) {
+					shouldPlayMusic = true; // Registrar que la música debe reproducirse al volver
+					backgroundMusic.pause(); // Pausar música
+				}
+			});
+			
+			const spotifyIcon = document.createElement("a");
+			spotifyIcon.href = item.spotify;
+			spotifyIcon.target = "_blank"; // Abrir en una nueva pestaña
+			spotifyIcon.innerHTML = `<svg aria-labelledby="icon-title"><title id="icon-title">Spotify</title><use xlink:href="assets/icons.svg#spotify"></use></svg>`;
+			// Configurar el color del SVG para Spotify
+			//const spotifySvg = spotifyIcon.querySelector("svg");
+			//spotifySvg.setAttribute("fill", "#1DB954"); // Verde de Spotify
+			spotifyIcon.addEventListener("click", (event) => {
+				event.stopPropagation();
+				const backgroundMusic = document.getElementById('background-music'); // Asegúrate de que exista este elemento
+				if(activeAudio != null && !activeAudio.paused){
+					activeAudio.pause();
+				}
+				else if (!backgroundMusic.paused) {
+					shouldPlayMusic = true; // Registrar que la música debe reproducirse al volver
+					backgroundMusic.pause(); // Pausar música
+				}
+			});
+
+			const appleMusicIcon = document.createElement("a");
+			appleMusicIcon.href = item.apple;
+			appleMusicIcon.target = "_blank"; // Abrir en una nueva pestaña
+			appleMusicIcon.innerHTML = `<svg aria-labelledby="icon-title"><title id="icon-title">Apple</title><use xlink:href="assets/icons.svg#apple"></use></svg>`;
+			// Configurar el color del SVG para Apple Music
+			//const appleSvg = appleMusicIcon.querySelector("svg");
+			//appleSvg.setAttribute("fill", "#A3AAAE"); // Gris de Apple Music
+			appleMusicIcon.addEventListener("click", (event) => {
+				event.stopPropagation();
+				const backgroundMusic = document.getElementById('background-music'); // Asegúrate de que exista este elemento
+				if(activeAudio != null && !activeAudio.paused){
+					activeAudio.pause();
+				}
+				else if (!backgroundMusic.paused) {
+					shouldPlayMusic = true; // Registrar que la música debe reproducirse al volver
+					backgroundMusic.pause(); // Pausar música
+				}
+			});
+
+			// Agregar los iconos al contenedor
+			iconsContainer.appendChild(youtubeIcon);
+			iconsContainer.appendChild(spotifyIcon);
+			iconsContainer.appendChild(appleMusicIcon);
+
+			dateElement.appendChild(txtNameElement);
+			dateElement.appendChild(txtDateElement);
+			dateElement.appendChild(iconsContainer);
+
 			point.appendChild(dateElement);
 		
 			// Mostrar la imagen y el texto
 			imageElement.style.display = "block";
 			dateElement.style.display = "block";
 		
+			updateBackground(item.scale, item.xOffset, item.yOffset);
+
 			// Mover la timeline hacia abajo
 			//timelineContainer.style.marginTop = "100px"; // Ajustar margen para dejar espacio
 		
@@ -2746,22 +2983,64 @@
 		}
 		
 		
-		// Inicialización al mostrar el contador
-		/*document.getElementById("latest-release-button").addEventListener("click", () => {
-			setTimeout(() => {
-				const timelineContainer = document.getElementById("timeline-container");
-				timelineContainer.style.opacity = "1"; // Mostrar la Timeline con transición
-				createTimeline(timelineData);
-				}, 2000); // Después de la animación del contador
-				});*/
-				
-				//Código para el Contador
-		document.getElementById("latest-release-button").addEventListener("click", function () {
+		// Variable para controlar si la música debería estar activa
+		let shouldPlayMusic = false;
+
+		// Detectar cuando la pestaña gana o pierde foco
+		window.addEventListener("focus", () => {
+			const backgroundMusic = document.getElementById('background-music'); // Asegúrate de que exista este elemento
+			if (document.visibilityState === "visible") {
+				if(activeAudio != null && activeAudio.paused){
+					activeAudio.play();
+				}
+				else if(shouldPlayMusic){
+					backgroundMusic.play(); // Reproducir música al volver a la pestaña
+				}
+			}
+		});
+
+		window.addEventListener("blur", () => {
+			/*const backgroundMusic = document.getElementById('background-music'); // Asegúrate de que exista este elemento
+			if(activeAudio != null && !activeAudio.paused){
+				activeAudio.pause();
+			}
+			else if (!backgroundMusic.paused) {
+				shouldPlayMusic = true; // Registrar que la música debe reproducirse al volver
+				backgroundMusic.pause(); // Pausar música
+			}*/
+		});
+
+		// Detectar cambios en la visibilidad del documento
+		document.addEventListener("visibilitychange", () => {
+			const backgroundMusic = document.getElementById('background-music'); // Asegúrate de que exista este elemento
+			if (document.visibilityState === "visible") {
+				if(activeAudio != null && activeAudio.paused){
+					activeAudio.play();
+				}
+				else if(shouldPlayMusic){
+					backgroundMusic.play(); // Reproducir música al volver a la pestaña
+				}
+			} 
+			/*else if (document.visibilityState === "hidden") {
+				if(activeAudio != null && !activeAudio.paused){
+					activeAudio.pause();
+				}
+				else if (!backgroundMusic.paused) {
+					shouldPlayMusic = true; // Registrar que la música debe reproducirse al volver
+					backgroundMusic.pause(); // Pausar música
+				}
+			}*/
+		});
+
+		let intervalId;
+
+		function startRelease(){
 			const main = document.getElementById("main");
 			const hiddenContainer = document.getElementById("hidden-container");
 			const timelineContainer = document.getElementById("timeline-container");
 			const audio = document.getElementById("background-music");
 			const countdownElement = document.getElementById("countdown");
+			const backgroundImage = document.getElementById('background-image');
 			function updateCountdown() {
 				const nowUTC = Date.now();
 				const targetDateUTC = Date.UTC(2024, 11, 28, 23, 0, 0); // 2024-12-29 00:00:00 en UTC+1
@@ -2771,8 +3050,11 @@
 				const difference = targetDateUTC - nowUTC;
 	
 				if (difference < 0) {
-					countdownElement.textContent = "00:00:00:00";
-					return;
+					//countdownElement.textContent = "00:00:00:00";
+					countdownElement.innerHTML = `
+						<img class="countdown-image" src="assets/latestRelease/logoRecortado.png"/>
+					`;
+					return false;
 				}
 	
 				const days = Math.floor(difference / (1000 * 60 * 60 * 24));
@@ -2781,6 +3063,7 @@
 				const seconds = Math.floor((difference / 1000) % 60);
 	
 				countdownElement.textContent = `${days.toString().padStart(2, '0')}:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+				return true;
 			}
 			
 			//console.log("DEBUG TEXT")
@@ -2809,14 +3092,61 @@
 
 				// Detectar fin de la animación del contenedor
 				hiddenContainer.addEventListener("animationend", () => {
+					backgroundImage.style.setProperty('--from-scale', getComputedStyle(backgroundImage).getPropertyValue('--to-scale') || 1);
+					backgroundImage.style.setProperty('--from-xOffset', getComputedStyle(backgroundImage).getPropertyValue('--to-xOffset') || '-1600px');
+					backgroundImage.style.setProperty('--from-yOffset', getComputedStyle(backgroundImage).getPropertyValue('--to-yOffset') || '-800px');
+					backgroundImage.style.setProperty('--to-scale', 1);
+					backgroundImage.style.setProperty('--to-xOffset', `-1600px`);
+					backgroundImage.style.setProperty('--to-yOffset', `-800px`);
 					countdownElement.classList.add("start-animation"); // Añadir la clase de animación
 					updateCountdown();
-					setInterval(updateCountdown, 500); // Actualiza cada segundo
+					intervalId = setInterval(()=>{
+						if(!updateCountdown()){
+							clearInterval(intervalId);
+						}
+					}, 500); // Actualiza cada segundo
 					setTimeout(() => {
+						backgroundImage.classList.add("start-animation-background");
+						backgroundImage.addEventListener("animationend", () => {
+							// Evento resize para ajustar los límites dinámicamente
+							window.addEventListener('resize', () => {
+								const viewportWidth = window.innerWidth;
+								const viewportHeight = window.innerHeight;
+
+								// Límite inferior dinámico
+								const minXOffset = -viewportWidth / 2.0;
+								const minYOffset = -viewportHeight / 2.0;
+
+								// Desplazamientos máximos para evitar bordes negros
+								const maxXOffset = 0.5 * viewportWidth - 3000;
+								const maxYOffset = 0.5 * viewportHeight - 3000;
+
+								// Recalcular y ajustar los valores actuales de offset
+								const clampedX = Math.min(minXOffset, Math.max(currentXOffset, maxXOffset));
+								const clampedY = Math.min(minYOffset, Math.max(currentYOffset, maxYOffset));
+
+								// Actualizar el fondo con los nuevos valores
+								updateBackground(currentScale, clampedX, clampedY);
+							});
+						}, { once: true });
 						timelineContainer.style.opacity = "1";
 						createTimeline(timelineData);
 					}, 4000); // Asegura que el contador se haya mostrado
 				}, { once: true });
 			}, 2000); // Tiempo de desvanecimiento del `main`
+		}
+
+		// Inicialización al mostrar el contador
+		/*document.getElementById("latest-release-button").addEventListener("click", () => {
+			setTimeout(() => {
+				const timelineContainer = document.getElementById("timeline-container");
+				timelineContainer.style.opacity = "1"; // Mostrar la Timeline con transición
+				createTimeline(timelineData);
+				}, 2000); // Después de la animación del contador
+				});*/
+				
+				//Código para el Contador
+		document.getElementById("latest-release-button").addEventListener("click", function () {
+			startRelease();
 		}, { once: true });
 })();

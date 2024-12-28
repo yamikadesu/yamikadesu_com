@@ -39,6 +39,52 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
     }
 }
 
+#background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* Asegura que partes fuera del viewport no se muestren */
+    z-index: -1; /* Coloca el fondo detrás de todo */
+}
+
+#background-image {
+	--from-scale: 1; /* Valor inicial de escala */
+    --to-scale: 1;   /* Valor final de escala */
+    --from-xOffset: -1600px; /* Offset inicial en X */
+    --to-xOffset: -800px;   /* Offset final en X */
+    --from-yOffset: -1600px; /* Offset inicial en Y */
+    --to-yOffset: -800px;   /* Offset final en Y */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-1600px, -800px) scale(var(--from-scale)); /* Centra la imagen */
+    max-width: none; /* Asegura que la imagen no se limite al contenedor */
+    min-width: 100%; /* La imagen cubre el ancho del viewport */
+    min-height: 100%; /* La imagen cubre la altura del viewport */
+    transition: transform 2s ease, width 2s ease, height 2s ease; /* Transiciones para zoom y desplazamientos */
+	opacity: 0;
+}
+
+.animated-background {
+    animation: animateBackground 2s ease-out forwards;
+}
+
+@keyframes animateBackground {
+    0% {
+        transform: translate(var(--from-xOffset), var(--from-yOffset)) scale(var(--from-scale));
+    }
+    100% {
+        transform: translate(var(--to-xOffset), var(--to-yOffset)) scale(var(--to-scale));
+    }
+}
+
+.countdown-image{
+	width: 500px;
+	margin-bottom: -10%;
+}
+
 .countdownContainer {
     text-align: center;
     font-size: 8vw;
@@ -75,6 +121,10 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 .start-animation {
     animation: fadeAndScaleIn 5s forwards cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.start-animation-background {
+    animation: fadeInOpacityBackground 3s forwards ease-out;
 }
 
 /* Media Queries para diferentes tamaños de pantalla */
@@ -122,7 +172,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 .timeline-point {
     display: flex;
-    flex-direction: column; /* Para apilar el punto y el texto */
+    flex-direction: row; /* Para apilar el punto y el texto */
     position: relative;
     width: 30px;
     height: 30px;
@@ -164,17 +214,51 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 /* Actualización de texto centrado */
 .timeline-date {
     position: relative; /* Posicionamiento absoluto respecto al punto */
-    top: calc(110% + 10px); /* Espacio debajo del punto */
-    left: 110%; /* Posicionamiento centrado horizontalmente */
+    top: calc(-10px); /* Espacio debajo del punto */
+    /*left: -250%; /* Posicionamiento centrado horizontalmente */
     /*transform: translateX(-50%); /* Corrige el desplazamiento para centrar */
     color: #fff;
     font-size: 22px;
+	min-width: 350px;
     text-align: center;
     font-family: 'Roboto Mono', monospace;
     /*display: none;*/
     /*width: 100px; /* Fijar ancho para centrar */
-	white-space: nowrap; /* Evitar quiebres de línea */
+	white-space: normal; /* Evitar quiebres de línea */
 	animation: slideDownDate 0.5s cubic-bezier(0, 0, 0, 1) forwards, fadeInOpacity 0.5s cubic-bezier(0, 0, 0.68, 0.3) forwards; /* Animación al mostrarse */
+}
+
+.timeline-inner-name {
+	position: relative;
+	left: -45%;
+}
+.timeline-inner-date {
+	position: relative;
+	left: -45%;
+	margin-top: 5px;
+	font-weight: normal;
+}
+
+.icons-container {
+    display: flex;
+	position: relative;
+	left: -45%;
+    gap: 5px; /* Espaciado entre iconos */
+    justify-content: center; /* Centrar los iconos horizontalmente */
+    margin-top: 5px; /* Espaciado superior opcional */
+}
+
+.icons-container a svg {
+    width: 30px; /* Tamaño pequeño para los iconos */
+    height: 30px;
+    fill: #fff; /* Color del icono */
+	/*stroke: #fff;
+	stroke-width: 1.5;*/
+    transition: transform 0.2s ease; /* Animación al pasar el cursor */
+}
+
+.icons-container a svg:hover {
+    transform: scale(1.2); /* Ampliar ligeramente al pasar el cursor */
 }
 
 /* Modificar estilos para centrar y redimensionar la imagen */
@@ -229,19 +313,46 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 @keyframes slideUpDate {
     from {
-        transform: translate(-300%, 0); /* Comienza desde arriba */
+        transform: translateY(50px); /* Comienza desde abajo */
     }
     to {
-        transform: translate(-300%, -50px); /* Termina en su posición original */
+        transform: translateY(0); /* Termina en su posición original */
     }
 }
 
 @keyframes slideDownDate {
     from {
-        transform: translate(-300%, -50px); /* Comienza desde arriba */
+        transform: translateY(0); /* Comienza desde abajo */
     }
     to {
-        transform: translate(-300%, 0); /* Termina en su posición original */
+        transform: translateY(50px); /* Termina en su posición original */
+    }
+}
+
+/*@keyframes slideUpDate {
+    from {
+        transform: translate(-300%, 0); 
+    }
+    to {
+        transform: translate(-300%, -50px); 
+    }
+}*/
+
+/*@keyframes slideDownDate {
+    from {
+        transform: translate(-300%, -50px); 
+    }
+    to {
+        transform: translate(-300%, 0); 
+    }
+}*/
+
+@keyframes fadeInOpacityBackground {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.8;
     }
 }
 
@@ -411,11 +522,23 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
         height: 100%;
     }*/
 
-	/*.timeline-date {
-		top: 110%;
-		left: 100%;
-		animation: slideDownDate 0.5s cubic-bezier(0, 0, 0, 1) forwards, fadeInOpacity 0.5s cubic-bezier(0, 0, 0.68, 0.3)
-	}*/
+	.timeline-date {
+		top: 0; 
+		left: 80%; 
+		text-align: left; 
+	}
+
+	.timeline-inner-name {
+		left: 0;
+	}
+	.timeline-inner-date {
+		left: 0;
+	}
+
+	.icons-container {
+		left: 0;
+		justify-content: left;
+	}
 
 	.timeline-info {
 		top: -100%;
@@ -438,25 +561,43 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 			transform: translateX(20px); /* Termina en su posición original */
 		}
 	}
-	
+
 	@keyframes slideUpDate {
 		from {
-			transform: translate(15px, -185%); /* Comienza desde arriba */
+			transform: translateX(20px); /* Comienza desde abajo */
 		}
 		to {
-			transform: translate(-50px, -185%); /* Termina en su posición original */
+			transform: translateX(-75px); /* Termina en su posición original */
 		}
 	}
 	
 	@keyframes slideDownDate {
 		from {
-			transform: translate(-50px, -185%); /* Comienza desde arriba */
+			transform: translateX(-75px); /* Comienza desde abajo */
 		}
 		to {
-			transform: translate(15px, -185%); /* Termina en su posición original */
+			transform: translateX(20px); /* Termina en su posición original */
 		}
 	}
-
+	
+	/*@keyframes slideUpDate {
+		from {
+			transform: translate(15px, -185%);
+		}
+		to {
+			transform: translate(-50px, -185%); 
+		}
+	}
+	
+	@keyframes slideDownDate {
+		from {
+			transform: translate(-50px, -185%);
+		}
+		to {
+			transform: translate(15px, -185%); 
+		}
+	}
+*/
 	@keyframes lineExpandCenter {
 		from {
 			height: 0%;
@@ -519,6 +660,10 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 }
 
 @media(max-width: 580px){
+	.timeline-date {
+		max-width: 150px;
+		min-width: 150px;
+	}
 	.countdownContainer {
         font-size: 3rem;
     }
