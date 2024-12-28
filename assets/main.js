@@ -3042,13 +3042,13 @@
 			const countdownElement = document.getElementById("countdown");
 			const backgroundImage = document.getElementById('background-image');
 			function updateCountdown() {
-				const now = new Date();
+				const nowUTC = new Date().getTime();
 				const targetDateUTC = Date.UTC(2024, 11, 28, 23, 0, 0); // 2024-12-29 00:00:00 en UTC+1
 
 				// Ajustar manualmente para UTC+1
 				//const targetDate = new Date('2024-12-29T00:00:00'); // Cambia esta fecha según sea necesario
 
-				const difference = targetDateUTC - now;
+				const difference = targetDateUTC - nowUTC;
 	
 				if (difference < 0) {
 					//countdownElement.textContent = "00:00:00:00";
