@@ -80,6 +80,11 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
     }
 }
 
+.countdown-image{
+	width: 500px;
+	margin-bottom: -10%;
+}
+
 .countdownContainer {
     text-align: center;
     font-size: 8vw;
@@ -230,7 +235,30 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 .timeline-inner-date {
 	position: relative;
 	left: -45%;
+	margin-top: 5px;
 	font-weight: normal;
+}
+
+.icons-container {
+    display: flex;
+	position: relative;
+	left: -45%;
+    gap: 5px; /* Espaciado entre iconos */
+    justify-content: center; /* Centrar los iconos horizontalmente */
+    margin-top: 5px; /* Espaciado superior opcional */
+}
+
+.icons-container a svg {
+    width: 30px; /* Tamaño pequeño para los iconos */
+    height: 30px;
+    fill: #fff; /* Color del icono */
+	/*stroke: #fff;
+	stroke-width: 1.5;*/
+    transition: transform 0.2s ease; /* Animación al pasar el cursor */
+}
+
+.icons-container a svg:hover {
+    transform: scale(1.2); /* Ampliar ligeramente al pasar el cursor */
 }
 
 /* Modificar estilos para centrar y redimensionar la imagen */
@@ -505,6 +533,11 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 	}
 	.timeline-inner-date {
 		left: 0;
+	}
+
+	.icons-container {
+		left: 0;
+		justify-content: left;
 	}
 
 	.timeline-info {

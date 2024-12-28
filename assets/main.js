@@ -2453,6 +2453,9 @@
 				name : "Anima MemoriA",
 				image: "assets/latestRelease/Anima Memoria 2.0.png",
 				audio: "assets/latestRelease/Anima MemoriA.mp3",
+				youtube: "https://youtu.be/8SKOE_SFINA",
+				spotify: "https://open.spotify.com/track/68ph2GFUoZMw5vj2MjwtJ1",
+				apple: "https://music.apple.com/us/album/anima-memoria-anniversary-edition/1661769494",
 				scale: 1,
 				xOffset: -1180,
 				yOffset: -2500,
@@ -2464,6 +2467,9 @@
 				name : "Anima EuphoriA",
 				image: "assets/latestRelease/AnimaEuphoriA3000.png",
 				audio: "assets/latestRelease/Anima EuphoriA.mp3",
+				youtube: "https://youtu.be/EgQXvosQ9pE",
+				spotify: "https://open.spotify.com/track/5TnPuEwpLFYjTFJeEFlh55",
+				apple: "https://music.apple.com/us/album/anima-euphoria-feat-nikki-simmons/1659233229",
 				scale: 1,
 				xOffset: 0,
 				yOffset: -1800,
@@ -2475,6 +2481,9 @@
 				name : "Dreams",
 				image: "assets/latestRelease/PortadaDreams4.PNG",
 				audio: "assets/latestRelease/Dreams.mp3",
+				youtube: "https://youtu.be/YeJzRmBI3_w",
+				spotify: "https://open.spotify.com/track/4wi5hs2Dy4gStomYwm7RJ3",
+				apple: "https://music.apple.com/us/album/dreams-feat-%E6%98%A5%E6%9D%A5/1675428981",
 				scale: 1,
 				xOffset: -700,
 				yOffset: -800,
@@ -2486,6 +2495,9 @@
 				name : "Estrellita Radiante",
 				image: "assets/latestRelease/EstrellitaRadiante.png",
 				audio: "assets/latestRelease/Estrellita Radiante.mp3",
+				youtube: "https://youtu.be/bDA41tWyfEM",
+				spotify: "https://open.spotify.com/track/0aQabzpBFPuPOOGC1eL3Az",
+				apple: "https://music.apple.com/us/album/estrellita-radiante-feat-nekane/1690380013",
 				scale: 1,
 				xOffset: -2700,
 				yOffset: -2700,
@@ -2497,6 +2509,9 @@
 				name : "Summer Sunrise",
 				image: "assets/latestRelease/SummerSunrise.png",
 				audio: "assets/latestRelease/Summer Sunrise (Remix).mp3",
+				youtube: "https://youtu.be/0nM-oybwcG0",
+				spotify: "https://open.spotify.com/track/2gLXh6SduGpcKWy9Hww6rt",
+				apple: "https://music.apple.com/us/album/summer-sunrise-single/1712516005",
 				scale: 1,
 				xOffset: -1780,
 				yOffset: -2500,
@@ -2508,6 +2523,9 @@
 				name : "A Star in the Sky",
 				image: "assets/latestRelease/A Star in the Sky.png",
 				audio: "assets/latestRelease/A Star in the Sky.mp3",
+				youtube: "https://www.youtube.com/watch?v=-UcHLFdHlA0&list=OLAK5uy_nv0huGBrSmJHL3NlJKOgh_xsPVYbnPyvk",
+				spotify: "https://open.spotify.com/album/3AmLPLsQccTleKikGku8fV",
+				apple: "https://music.apple.com/us/album/a-star-in-the-sky-ep/1773693185",
 				scale: 1,
 				xOffset: -1780,
 				yOffset: -2000,
@@ -2519,6 +2537,9 @@
 				name : "Nana de los Lirios",
 				image: "assets/latestRelease/NanaDeLosLirios.png",
 				audio: "assets/latestRelease/Nana de los Lirios.mp3",
+				youtube: "https://www.youtube.com/watch?v=0mB-4Xb93B8&list=OLAK5uy_kL3KabriCaKlBsWGFfCg0YwW75mWY5368",
+				spotify: "https://open.spotify.com/album/0FxuxYUhxGVbJhHi7t8S16",
+				apple: "https://music.apple.com/us/album/nana-de-los-lirios-single/1745926206",
 				scale: 1,
 				xOffset: 0,
 				yOffset: -2500,
@@ -2530,6 +2551,9 @@
 				name : "Parasites",
 				image: "assets/latestRelease/parasites_2 3000.png",
 				audio: "assets/latestRelease/Parasites.mp3",
+				youtube: "https://www.youtube.com/watch?v=dbTAHNilLw0&list=OLAK5uy_lLVd-dqyw5l3OQgLw5JsuzeymAabih3fM",
+				spotify: "https://open.spotify.com/album/0E8ajiSwtVTreu8uWT03GE",
+				apple: "https://music.apple.com/us/album/parasites-single/1745943392",
 				scale: 1,
 				xOffset: -1780,
 				yOffset: -1000,
@@ -2541,6 +2565,9 @@
 				name : "Limitless Skies",
 				image: "assets/latestRelease/limitless skies fondo_con_logo_2650x2650(final).png",
 				audio: "assets/latestRelease/Limitless Skies (Official Version).mp3",
+				youtube: "https://www.youtube.com/@yamikadesu",
+				spotify: "https://open.spotify.com/artist/0MNjBbWyyQQtJtDIRn2930",
+				apple: "https://music.apple.com/us/artist/yamikadesu/1594208065",
 				scale: 1,
 				xOffset: -1320,
 				yOffset: -1700,
@@ -2548,6 +2575,18 @@
 				//yOffset: -65.5,
 			},
 		];
+
+		function manualPause() {
+			const backgroundMusic = document.getElementById('background-music');
+			backgroundMusic.pause();
+			shouldPlayMusic = false; // Evita que se reproduzca automáticamente
+		}
+		
+		function manualPlay() {
+			const backgroundMusic = document.getElementById('background-music');
+			backgroundMusic.play();
+			shouldPlayMusic = true; // Permite la reproducción automática al volver
+		}
 
 		let currentXOffset = -1600; // Posición actual de xOffset
 		let currentYOffset = -800; // Posición actual de yOffset
@@ -2677,10 +2716,7 @@
 		function createTimeline(data) {
 			const container = document.getElementById("timeline-container");
 			container.innerHTML = ""; // Limpiar el contenedor
-			const backgroundMusic = document.getElementById('background-music'); // Asegúrate de que exista este elemento
-			if(backgroundMusic){
-				backgroundMusic.play();
-			}
+			manualPlay();
 		
 			// Crear la flecha izquierda
 			if (currentPage > 0) {
@@ -2772,6 +2808,7 @@
 				container.appendChild(rightPlaceholder); // Espacio vacío si no hay flecha
 			}
 		}
+		let activeAudio = null;
 
 		function handleTimelineClick(item, point) {
 			const existingImage = point.querySelector("img");
@@ -2779,15 +2816,11 @@
 			const existingVideo = point.querySelector("iframe");
 			//const timelineContainer = document.getElementById("timeline-container");
 			//const audioElement = document.getElementById("background-music");
-			const backgroundMusic = document.getElementById('background-music'); // Asegúrate de que exista este elemento
-			let activeAudio = null;
-
+			activeAudio = null;
 			// Cerrar otros puntos abiertos
 			closeAllPoints();
 		
-			if(backgroundMusic){
-				backgroundMusic.play();
-			}
+			manualPlay();
 			// Si ya hay contenido visible en este punto, cerrarlo
 			if (existingImage || existingDate || existingVideo) {
 			//if (backgroundMusic) {
@@ -2807,13 +2840,13 @@
 			imageElement.addEventListener('click', (event) => {
 				event.stopPropagation();
 				// Si hay un video abierto, lo cerramos
-				if (activeAudio) {
+				if (activeAudio != null) {
 					if (activeAudio.parentElement) {
 						activeAudio.parentElement.removeChild(activeAudio);
 					}
 					imageElement.classList.remove("timeline-info-audio");
 					activeAudio = null;
-					backgroundMusic.play(); // Reanudar la música
+					manualPlay();
 					return;
 				}
 		
@@ -2837,7 +2870,7 @@
 					imageElement.parentElement.removeChild(imageElement);
 				}*/
 
-				backgroundMusic.pause(); // Pausar la música de fondo
+				manualPause(); // Pausar la música de fondo
 				/*if (item.date === "2024-12-29") {
 					window.open("", "_blank"); // TODO!
 					return;
@@ -2858,9 +2891,80 @@
 			txtDateElement.classList.add("timeline-inner-date");
 			txtDateElement.innerHTML = `${formatDate(item.date)}`;
 			//dateElement.style.animation = "dateSlideDown 0.5s cubic-bezier(0, 0, 0, 1)"; // Animación al aparecer
-			point.appendChild(dateElement);
+
+			// Crear el contenedor de los iconos
+			const iconsContainer = document.createElement("div");
+			iconsContainer.classList.add("icons-container");
+
+			// Iconos individuales
+			const youtubeIcon = document.createElement("a");
+			youtubeIcon.href = item.youtube;
+			youtubeIcon.target = "_blank"; // Abrir en una nueva pestaña
+			youtubeIcon.innerHTML = `<svg aria-labelledby="icon-title"><title id="icon-title">YouTube</title><use xlink:href="assets/icons.svg#youtube-alt"></use></svg>`;
+			// Configurar el color del SVG para YouTube
+			//const youtubeSvg = youtubeIcon.querySelector("svg");
+			//youtubeSvg.setAttribute("fill", "#FF0000"); // Rojo de YouTube
+
+			youtubeIcon.addEventListener("click", (event) => {
+				event.stopPropagation();
+				const backgroundMusic = document.getElementById('background-music'); // Asegúrate de que exista este elemento
+				if(activeAudio != null && !activeAudio.paused){
+					activeAudio.pause();
+				}
+				else if (!backgroundMusic.paused) {
+					shouldPlayMusic = true; // Registrar que la música debe reproducirse al volver
+					backgroundMusic.pause(); // Pausar música
+				}
+			});
+			
+			const spotifyIcon = document.createElement("a");
+			spotifyIcon.href = item.spotify;
+			spotifyIcon.target = "_blank"; // Abrir en una nueva pestaña
+			spotifyIcon.innerHTML = `<svg aria-labelledby="icon-title"><title id="icon-title">Spotify</title><use xlink:href="assets/icons.svg#spotify"></use></svg>`;
+			// Configurar el color del SVG para Spotify
+			//const spotifySvg = spotifyIcon.querySelector("svg");
+			//spotifySvg.setAttribute("fill", "#1DB954"); // Verde de Spotify
+			spotifyIcon.addEventListener("click", (event) => {
+				event.stopPropagation();
+				const backgroundMusic = document.getElementById('background-music'); // Asegúrate de que exista este elemento
+				if(activeAudio != null && !activeAudio.paused){
+					activeAudio.pause();
+				}
+				else if (!backgroundMusic.paused) {
+					shouldPlayMusic = true; // Registrar que la música debe reproducirse al volver
+					backgroundMusic.pause(); // Pausar música
+				}
+			});
+
+			const appleMusicIcon = document.createElement("a");
+			appleMusicIcon.href = item.apple;
+			appleMusicIcon.target = "_blank"; // Abrir en una nueva pestaña
+			appleMusicIcon.innerHTML = `<svg aria-labelledby="icon-title"><title id="icon-title">Apple</title><use xlink:href="assets/icons.svg#apple"></use></svg>`;
+			// Configurar el color del SVG para Apple Music
+			//const appleSvg = appleMusicIcon.querySelector("svg");
+			//appleSvg.setAttribute("fill", "#A3AAAE"); // Gris de Apple Music
+			appleMusicIcon.addEventListener("click", (event) => {
+				event.stopPropagation();
+				const backgroundMusic = document.getElementById('background-music'); // Asegúrate de que exista este elemento
+				if(activeAudio != null && !activeAudio.paused){
+					activeAudio.pause();
+				}
+				else if (!backgroundMusic.paused) {
+					shouldPlayMusic = true; // Registrar que la música debe reproducirse al volver
+					backgroundMusic.pause(); // Pausar música
+				}
+			});
+
+			// Agregar los iconos al contenedor
+			iconsContainer.appendChild(youtubeIcon);
+			iconsContainer.appendChild(spotifyIcon);
+			iconsContainer.appendChild(appleMusicIcon);
+
 			dateElement.appendChild(txtNameElement);
 			dateElement.appendChild(txtDateElement);
+			dateElement.appendChild(iconsContainer);
+
+			point.appendChild(dateElement);
 		
 			// Mostrar la imagen y el texto
 			imageElement.style.display = "block";
@@ -2879,17 +2983,58 @@
 		}
 		
 		
-		// Inicialización al mostrar el contador
-		/*document.getElementById("latest-release-button").addEventListener("click", () => {
-			setTimeout(() => {
-				const timelineContainer = document.getElementById("timeline-container");
-				timelineContainer.style.opacity = "1"; // Mostrar la Timeline con transición
-				createTimeline(timelineData);
-				}, 2000); // Después de la animación del contador
-				});*/
-				
-				//Código para el Contador
-		document.getElementById("latest-release-button").addEventListener("click", function () {
+		// Variable para controlar si la música debería estar activa
+		let shouldPlayMusic = false;
+
+		// Detectar cuando la pestaña gana o pierde foco
+		window.addEventListener("focus", () => {
+			const backgroundMusic = document.getElementById('background-music'); // Asegúrate de que exista este elemento
+			if (document.visibilityState === "visible") {
+				if(activeAudio != null && activeAudio.paused){
+					activeAudio.play();
+				}
+				else if(shouldPlayMusic){
+					backgroundMusic.play(); // Reproducir música al volver a la pestaña
+				}
+			}
+		});
+
+		window.addEventListener("blur", () => {
+			/*const backgroundMusic = document.getElementById('background-music'); // Asegúrate de que exista este elemento
+			if(activeAudio != null && !activeAudio.paused){
+				activeAudio.pause();
+			}
+			else if (!backgroundMusic.paused) {
+				shouldPlayMusic = true; // Registrar que la música debe reproducirse al volver
+				backgroundMusic.pause(); // Pausar música
+			}*/
+		});
+
+		// Detectar cambios en la visibilidad del documento
+		document.addEventListener("visibilitychange", () => {
+			const backgroundMusic = document.getElementById('background-music'); // Asegúrate de que exista este elemento
+			if (document.visibilityState === "visible") {
+				if(activeAudio != null && activeAudio.paused){
+					activeAudio.play();
+				}
+				else if(shouldPlayMusic){
+					backgroundMusic.play(); // Reproducir música al volver a la pestaña
+				}
+			} 
+			/*else if (document.visibilityState === "hidden") {
+				if(activeAudio != null && !activeAudio.paused){
+					activeAudio.pause();
+				}
+				else if (!backgroundMusic.paused) {
+					shouldPlayMusic = true; // Registrar que la música debe reproducirse al volver
+					backgroundMusic.pause(); // Pausar música
+				}
+			}*/
+		});
+
+		let intervalId;
+
+		function startRelease(){
 			const main = document.getElementById("main");
 			const hiddenContainer = document.getElementById("hidden-container");
 			const timelineContainer = document.getElementById("timeline-container");
@@ -2898,12 +3043,19 @@
 			const backgroundImage = document.getElementById('background-image');
 			function updateCountdown() {
 				const now = new Date();
-				const targetDate = new Date('2024-12-29T00:00:00'); // Cambia esta fecha según sea necesario
+				const targetDateUTC = new Date(Date.UTC(2024, 11, 28, 23, 0, 0)); // 2024-12-29 00:00:00 en UTC+1
+
+				// Ajustar manualmente para UTC+1
+				const targetDate = new Date(targetDateUTC.getTime()); // Sumar 1 hora para UTC+1
+				//const targetDate = new Date('2024-12-29T00:00:00'); // Cambia esta fecha según sea necesario
 				const difference = targetDate - now;
 	
 				if (difference < 0) {
-					countdownElement.textContent = "00:00:00:00";
-					return;
+					//countdownElement.textContent = "00:00:00:00";
+					countdownElement.innerHTML = `
+						<img class="countdown-image" src="assets/latestRelease/logoRecortado.png"/>
+					`;
+					return false;
 				}
 	
 				const days = Math.floor(difference / (1000 * 60 * 60 * 24));
@@ -2912,6 +3064,7 @@
 				const seconds = Math.floor((difference / 1000) % 60);
 	
 				countdownElement.textContent = `${days.toString().padStart(2, '0')}:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+				return true;
 			}
 			
 			//console.log("DEBUG TEXT")
@@ -2948,7 +3101,11 @@
 					backgroundImage.style.setProperty('--to-yOffset', `-800px`);
 					countdownElement.classList.add("start-animation"); // Añadir la clase de animación
 					updateCountdown();
-					setInterval(updateCountdown, 500); // Actualiza cada segundo
+					intervalId = setInterval(()=>{
+						if(!updateCountdown()){
+							clearInterval(intervalId);
+						}
+					}, 500); // Actualiza cada segundo
 					setTimeout(() => {
 						backgroundImage.classList.add("start-animation-background");
 						backgroundImage.addEventListener("animationend", () => {
@@ -2978,5 +3135,19 @@
 					}, 4000); // Asegura que el contador se haya mostrado
 				}, { once: true });
 			}, 2000); // Tiempo de desvanecimiento del `main`
+		}
+
+		// Inicialización al mostrar el contador
+		/*document.getElementById("latest-release-button").addEventListener("click", () => {
+			setTimeout(() => {
+				const timelineContainer = document.getElementById("timeline-container");
+				timelineContainer.style.opacity = "1"; // Mostrar la Timeline con transición
+				createTimeline(timelineData);
+				}, 2000); // Después de la animación del contador
+				});*/
+				
+				//Código para el Contador
+		document.getElementById("latest-release-button").addEventListener("click", function () {
+			startRelease();
 		}, { once: true });
 })();
