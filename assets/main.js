@@ -2787,7 +2787,8 @@
 				const minutes = Math.floor((difference / (1000 * 60)) % 60);
 				const seconds = Math.floor((difference / 1000) % 60);
 	
-				countdownElement.textContent = `${days.toString().padStart(2, '0')}:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+				//countdownElement.textContent = `${days.toString().padStart(2, '0')}:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+				countdownElement.textContent = `${nowUTC.toString()}`;
 			}
 			
 			//console.log("DEBUG TEXT")
