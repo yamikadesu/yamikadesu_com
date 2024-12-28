@@ -2764,7 +2764,11 @@
 			const countdownElement = document.getElementById("countdown");
 			function updateCountdown() {
 				const now = new Date();
-				const nowUTC = now.toISOString();
+				// Obtener el desfase en minutos (negativo si estás por delante de UTC, positivo si estás por detrás)
+				const offsetMinutes = now.getTimezoneOffset();
+
+				// Ajustar la fecha local sumando el desfase (convertido a milisegundos)
+				const nowUTC = new Date(now.getTime() + offsetMinutes * 60 * 1000);
 				const targetDateUTC = Date.UTC(2024, 11, 28, 23, 0, 0); // 2024-12-29 00:00:00 en UTC+1
 
 				// Ajustar manualmente para UTC+1
