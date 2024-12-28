@@ -3048,6 +3048,7 @@
 				// Ajustar manualmente para UTC+1
 				const targetDate = new Date(targetDateUTC.getTime()); // Sumar 1 hora para UTC+1
 				//const targetDate = new Date('2024-12-29T00:00:00'); // Cambia esta fecha según sea necesario
+
 				const difference = targetDate - now;
 	
 				if (difference < 0) {
