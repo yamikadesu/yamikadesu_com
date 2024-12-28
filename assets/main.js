@@ -2767,8 +2767,9 @@
 				const targetDateUTC = new Date(Date.UTC(2024, 11, 28, 23, 0, 0)); // 2024-12-29 00:00:00 en UTC+1
 
 				// Ajustar manualmente para UTC+1
-				const targetDate = new Date(targetDateUTC.getTime()); // Sumar 1 hora para UTC+1
-				const difference = targetDate - now;
+				//const targetDate = new Date('2024-12-29T00:00:00'); // Cambia esta fecha según sea necesario
+
+				const difference = targetDateUTC - now;
 	
 				if (difference < 0) {
 					countdownElement.textContent = "00:00:00:00";
