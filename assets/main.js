@@ -2763,9 +2763,9 @@
 			const audio = document.getElementById("background-music");
 			const countdownElement = document.getElementById("countdown");
 			function updateCountdown() {
-				const now = new Date();
+				//const now = new Date();
 				// Obtener el desfase en minutos (negativo si estás por delante de UTC, positivo si estás por detrás)
-				const nowUTC = now.toISOString();
+				const nowUTC = Date.now();
 
 				// Ajustar la fecha local sumando el desfase (convertido a milisegundos)
 				//const nowUTC = new Date(now.getTime() + offsetMinutes * 60 * 1000);
