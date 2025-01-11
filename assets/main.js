@@ -3149,4 +3149,31 @@
 		document.getElementById("latest-release-button").addEventListener("click", function () {
 			startRelease();
 		}, { once: true });
+
+		document.getElementById("latest-release-button-internal").addEventListener("click", function () {
+			startRelease();
+		}, { once: true });
+
+		/*document.addEventListener("DOMContentLoaded", () => {
+		
+			// Función para manejar la lógica de visibilidad del botón
+			const checkHashAndUpdateButton = () => {
+				if (window.location.hash === "#latestRelease") {
+
+				} else {
+
+				}
+			};
+		
+			// Comprobar al cargar la página
+			checkHashAndUpdateButton();
+		
+			// Manejar el clic en el botón de play
+			playButton.addEventListener("click", () => {
+
+			});
+		
+			// Escuchar cambios en el hash
+			window.addEventListener("hashchange", checkHashAndUpdateButton);
+		});*/
 })();
