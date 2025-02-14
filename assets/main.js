@@ -2446,6 +2446,8 @@
 		let currentPage = 0;
 		const maxPointsPerPage = 4;
 
+		const logoImgURL = "assets/latestRelease/logoRecortado.png";
+
 		// Timeline Configuración
 		const timelineData = [
 			{
@@ -3052,7 +3054,7 @@
 				if (difference < 0) {
 					//countdownElement.textContent = "00:00:00:00";
 					countdownElement.innerHTML = `
-						<img class="countdown-image" src="assets/latestRelease/logoRecortado.png"/>
+						<img class="countdown-image" src="${logoImgURL}"/>
 					`;
 					return false;
 				}
@@ -3081,15 +3083,17 @@
 				hiddenContainer.style.display = "flex";
 				document.body.style.overflow = 'hidden';
 
-				function preloadImages(imageUrls) {
+				function preloadImages() {
+					const logoImg = new Image();
+					logoImg.src = logoImgURL;
+					const imageUrls = timelineData.map(item => item.image);
 					imageUrls.forEach(url => {
 						const img = new Image();
 						img.src = url;
 					});
 				}
 				
-				const imageUrls = timelineData.map(item => item.image);
-				preloadImages(imageUrls);
+				preloadImages();
 				
 				document.querySelector('meta[name="viewport"]').setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
 				window.addEventListener('wheel', function(event) {
