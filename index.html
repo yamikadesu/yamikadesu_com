@@ -20,6 +20,16 @@
 	<body class="is-loading">
 		<audio id="background-music" loop src="assets/latestRelease/Limitless Skies (Slowed Instrumental Version).mp3">
 		</audio>
+		<div id="volume-control" class="volumeControl">
+			<div id="speaker-icon" class="speakerIcon">
+				<svg id="speaker-svg" class="speakerSvg" viewBox="0 0 24 24">
+					<path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.06c1.48-.74 2.5-2.26 2.5-4.03zM3 9v6h4l5 5V4L7 9H3z" fill="white"/>
+				</svg>
+			</div>
+			<div id="volume-slider" class="volumeSlider">
+				<input type="range" id="volume-range" class="volumeRange" orient="vertical" min="0" max="100" value="100">
+			</div>
+		</div>
 		<div class="countdownContainer" id="hidden-container" style="opacity: 0; display: none;">
 			<div id="background-container">
 				<img id="background-image" src="assets/latestRelease/limitless skies fondo.png" alt="Background" />

@@ -5,6 +5,66 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 }
 
 /* Animación LatestRelease */
+
+/* Volume control
+/* Contenedor del control de volumen */
+.volumeControl {
+	position: fixed;
+	top: 2%;
+	right: 0%;
+	z-index: 9999; /* Asegura que esté por encima de otros elementos */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	opacity: 0; /* Inicia invisible */
+    transition: opacity 2s ease; /* Transición suave para mostrarlo */
+}
+
+/* Estilos para el icono del altavoz */
+.speakerIcon {
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+}
+
+/* Slider de volumen: oculto por defecto */
+.volumeSlider {
+	margin-top: 10px;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.7s ease;
+}
+
+/* Cuando se hace hover sobre el contenedor del volumen se muestra el slider */
+.volumeControl:hover .volumeSlider {
+	opacity: 1;
+	visibility: visible;
+}
+
+/* Estilos para el input range vertical */
+.volumeRange {
+	-webkit-appearance: none;
+	appearance: none;
+	margin-left: -2%;
+	margin-top: 40%;
+	width: 100px; /* define un ancho mayor, que se convertirá en la altura tras rotar */
+	height: 5px;  /* este valor será el ancho real */
+	background: #444;
+	border-radius: 10px;
+	transform: rotate(-90deg);
+	transform-origin: center;
+	cursor: pointer;
+}
+
+.volumeRange::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	width: 16px;
+	height: 16px;
+	background: #fff;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
 .fade-out {
     animation: fadeOut 1s forwards;
 }

@@ -2578,6 +2578,64 @@
 			},
 		];
 
+		let currentVolume = 1; // Volumen actual (entre 0 y 1)
+		let isMuted = false;   // Estado de muteo
+
+		const volumeRange = document.getElementById('volume-range');
+
+		function updateAllVolumes() {
+			const backgroundMusic = document.getElementById('background-music');
+			if (backgroundMusic) {
+			  backgroundMusic.volume = currentVolume;
+			  backgroundMusic.muted = isMuted;
+			}
+			// Actualizar todos los audios de timeline que estén creados
+			const timelineAudios = document.querySelectorAll("#timeline-audio");
+			timelineAudios.forEach(audio => {
+			  audio.volume = currentVolume;
+			  audio.muted = isMuted;
+			});
+		}
+
+		function updateSliderBackground(value) {
+			// Crea un gradiente que va de blanco hasta el valor indicado, y de gris el resto.
+			volumeRange.style.background = `linear-gradient(to right, white 0%, white ${value}%, #444 ${value}%, #444 100%)`;
+		}
+
+		updateSliderBackground(volumeRange.value);
+
+		document.getElementById('speaker-icon').addEventListener('click', () => {
+			isMuted = !isMuted;
+			updateAllVolumes();
+			
+			// Cambiar el icono: si está muteado, muestra un icono de altavoz cortado, de lo contrario, el icono normal.
+			const speakerSvg = document.getElementById('speaker-svg');
+			if (isMuted) {
+				// Actualiza el SVG o cambia de clase para reflejar que está muteado
+				speakerSvg.innerHTML = `<path d="M3 9v6h4l5 5V4L7 9H3z" fill="white"/>`;
+			} else {
+				// Icono normal de altavoz
+				speakerSvg.innerHTML = `<path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.06c1.48-.74 2.5-2.26 2.5-4.03zM3 9v6h4l5 5V4L7 9H3z" fill="white"/>`;
+			}
+		});
+
+		document.getElementById('volume-range').addEventListener('input', (event) => {
+			const value = event.target.value; // valor entre 0 y 100
+			updateSliderBackground(value);
+			currentVolume = value / 100;
+			// Si el slider llega a 0, forzamos el muteo y actualizamos el icono
+			if (currentVolume === 0) {
+				isMuted = true;
+				// Actualizar icono a estado muteado
+				document.getElementById('speaker-svg').innerHTML = `<path d="M3 9v6h4l5 5V4L7 9H3z" fill="white"/>`;
+			} else {
+				isMuted = false;
+				// Restaurar icono normal
+				document.getElementById('speaker-svg').innerHTML = `<path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.06c1.48-.74 2.5-2.26 2.5-4.03zM3 9v6h4l5 5V4L7 9H3z" fill="white"/>`;
+			}
+			updateAllVolumes();
+		});
+
 		function manualPause() {
 			const backgroundMusic = document.getElementById('background-music');
 			backgroundMusic.pause();
@@ -2665,12 +2723,14 @@
 		function closeAllPoints() {
 			const openPointsInfo = document.querySelectorAll(".timeline-info");
 			const openPointsDate = document.querySelectorAll(".timeline-date");
-			const openPointsAudio = document.querySelector("#timeline-audio");
-			if(openPointsAudio){
-				if (openPointsAudio.parentElement) {
-					openPointsAudio.parentElement.removeChild(openPointsAudio);
+			const openPointsAudio = document.querySelectorAll("#timeline-audio");
+			openPointsAudio.forEach((element) => {
+				if(element){
+					if (element.parentElement) {
+						element.parentElement.removeChild(element);
+					}
 				}
-			}
+			});
 			/*openPointsAudio.forEach((element) => {
 				if (element) { // Verificar si el elemento existe antes de manipularlo
 					if (element.parentElement) {
@@ -2856,6 +2916,8 @@
 				audioElement.id = "timeline-audio";
 				audioElement.src = `${item.audio}`;
 				audioElement.loop = true;
+				audioElement.volume = currentVolume;
+				audioElement.muted = isMuted;
 				imageElement.appendChild(audioElement);
 				imageElement.classList.add("timeline-info-audio");
 				/*imageElement.innerHTML = `
@@ -3113,6 +3175,7 @@
 					backgroundImage.style.setProperty('--to-xOffset', `-1600px`);
 					backgroundImage.style.setProperty('--to-yOffset', `-800px`);
 					countdownElement.classList.add("start-animation"); // Añadir la clase de animación
+					document.getElementById("volume-control").style.opacity = "1";
 					updateCountdown();
 					intervalId = setInterval(()=>{
 						if(!updateCountdown()){
