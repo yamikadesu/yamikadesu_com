@@ -3176,6 +3176,7 @@
 					backgroundImage.style.setProperty('--to-yOffset', `-800px`);
 					countdownElement.classList.add("start-animation"); // Añadir la clase de animación
 					document.getElementById("volume-control").style.opacity = "1";
+					document.getElementById("reload-control").style.opacity = "1";
 					updateCountdown();
 					intervalId = setInterval(()=>{
 						if(!updateCountdown()){
@@ -3213,6 +3214,10 @@
 			}, 2000); // Tiempo de desvanecimiento del `main`
 		}
 
+		document.getElementById('reload-icon').addEventListener('click', () => {
+			location.reload();
+		});
+
 		// Inicialización al mostrar el contador
 		/*document.getElementById("latest-release-button").addEventListener("click", () => {
 			setTimeout(() => {
@@ -3222,7 +3227,7 @@
 				}, 2000); // Después de la animación del contador
 				});*/
 				
-				//Código para el Contador
+		//Código para el Contador
 		document.getElementById("latest-release-button").addEventListener("click", function () {
 			startRelease();
 		}, { once: true });

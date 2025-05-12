@@ -6,6 +6,30 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 /* Animación LatestRelease */
 
+/* Reload button */
+
+.reloadControl {
+  position: fixed;
+  top: 2%;
+  left: 30px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;                /* Inicia invisible */
+  transition: opacity 2s ease; /* Misma transición que .volumeControl */
+}
+
+.reloadControl:hover .reloadIcon {
+  opacity: 1;      /* Permitir hover si quisieras animar algo más */
+}
+
+.reloadIcon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
 /* Volume control
 /* Contenedor del control de volumen */
 .volumeControl {
@@ -1160,6 +1184,33 @@ h1.style3 a:hover, h2.style3 a:hover, h3.style3 a:hover, p.style3 a:hover {
 }
 
 h1.style3 span.p:nth-child(n + 2), h2.style3 span.p:nth-child(n + 2), h3.style3 span.p:nth-child(n + 2), p.style3 span.p:nth-child(n + 2) {
+	margin-top: 1rem;
+}
+
+h1.style3_x, h2.style3_x, h3.style3_x, p.style3_x {
+	text-align: center;
+	color: #E76492;
+	font-family: 'Poppins', sans-serif;
+	font-size: 0.85em;
+	line-height: 1.375;
+	font-weight: 350;
+	margin-top: 0px !important;
+}
+
+h1.style3_x mark, h2.style3_x mark, h3.style3_x mark, p.style3_x mark {
+	color: #A17C5A;
+	background-color: transparent;
+}
+
+h1.style3_x a, h2.style3_x a, h3.style3_x a, p.style3_x a {
+	text-decoration: none;
+}
+
+h1.style3_x a:hover, h2.style3_x a:hover, h3.style3_x a:hover, p.style3_x a:hover {
+	text-decoration: underline;
+}
+
+h1.style3_x span.p:nth-child(n + 2), h2.style3_x span.p:nth-child(n + 2), h3.style3_x span.p:nth-child(n + 2), p.style3_x span.p:nth-child(n + 2) {
 	margin-top: 1rem;
 }
 
