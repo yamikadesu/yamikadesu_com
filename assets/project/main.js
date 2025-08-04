@@ -2591,5 +2591,8 @@
 		onvisible.add('#text49', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
 		onvisible.add('#text36', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
 		onvisible.add('#gallery12', { style: 'fade-down', speed: 1000, intensity: 5, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#textEgo', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#textEgoDescription', { style: 'fade-down', speed: 1000, intensity: 0, threshold: 3, delay: 0, state: true, replay: false });
+		onvisible.add('#galleryEgo', { style: 'fade-down', speed: 1000, intensity: 5, threshold: 3, delay: 0, state: true, replay: false });
 
 })();

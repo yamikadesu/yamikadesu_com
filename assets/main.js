@@ -2497,7 +2497,7 @@
 				name : "Estrellita Radiante",
 				image: "assets/latestRelease/EstrellitaRadiante.png",
 				audio: "assets/latestRelease/Estrellita Radiante.mp3",
-				youtube: "https://youtu.be/bDA41tWyfEM",
+				youtube: "https://youtu.be/zidZRMA4XK4",
 				spotify: "https://open.spotify.com/track/0aQabzpBFPuPOOGC1eL3Az",
 				apple: "https://music.apple.com/us/album/estrellita-radiante-feat-nekane/1690380013",
 				scale: 1,
