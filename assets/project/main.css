@@ -531,7 +531,7 @@ body.is-instant:after {
 	max-width: 100%;
 	width: auto;
 	border-radius: 1.5rem;
-	box-shadow: 0.291rem 0.236rem 0.75rem 0rem rgba(77,189,81,0.471);
+	box-shadow: 0.291rem 0.236rem 0.75rem 0rem rgba(0, 207, 158,0.471);
 	transition: none;
 }
 
@@ -1344,7 +1344,7 @@ h1.style4 span.p:nth-child(n + 2), h2.style4 span.p:nth-child(n + 2), h3.style4 
 }
 
 #text46 {
-	color: #4EDE5C;
+	color: #00cf9e;
 	font-family: 'Baloo', cursive;
 	letter-spacing: 0.325rem;
 	width: calc(100% + 0.325rem);
@@ -1375,7 +1375,7 @@ h1.style4 span.p:nth-child(n + 2), h2.style4 span.p:nth-child(n + 2), h3.style4 
 
 #text27 {
 	text-align: center;
-	color: #4EDE5C;
+	color: #00cf9e;
 	font-family: 'Poppins', sans-serif;
 	padding-left: 2.5rem;
 	padding-right: 2.5rem;
@@ -2130,7 +2130,7 @@ h1.style4 span.p:nth-child(n + 2), h2.style4 span.p:nth-child(n + 2), h3.style4 
 	padding-bottom: 0rem;
 	padding-top: 0rem;
 	font-variant: small-caps;
-	color: #4EDE5C;
+	color: #00cf9e;
 	font-family: 'Poppins', sans-serif;
 	font-size: 0.75em;
 	line-height: 1.75;
