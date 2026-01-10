@@ -2446,6 +2446,10 @@
 		let currentPage = 0;
 		const maxPointsPerPage = 4;
 
+		const targetDateUTC = Date.UTC(2026, 0, 28, 23, 0, 0); // 2024-12-29 00:00:00 en UTC+1
+
+		const separateLastOnOwnPage = true;
+
 		const logoImgURL = "assets/latestRelease/logoRecortado.png";
 
 		// Timeline Configuración
@@ -2578,6 +2582,33 @@
 			},
 		];
 
+		let countdownRunning = true;
+
+		function paginateData(data) {
+			if (!separateLastOnOwnPage) {
+				const pages = [];
+				for (let i = 0; i < data.length; i += maxPointsPerPage) {
+					pages.push(data.slice(i, i + maxPointsPerPage));
+				}
+				return pages;
+			}
+
+			if (data.length === 0) return [];
+			if (data.length <= maxPointsPerPage) return [data.slice()];
+
+			const last = data[data.length - 1];
+			const rest = data.slice(0, data.length - 1); 
+			const pages = [];
+
+			for (let i = 0; i < rest.length; i += maxPointsPerPage) {
+				pages.push(rest.slice(i, i + maxPointsPerPage));
+			}
+
+			pages.push([last]);
+
+			return pages;
+		}
+
 		let currentVolume = 1; // Volumen actual (entre 0 y 1)
 		let isMuted = false;   // Estado de muteo
 
@@ -2655,7 +2686,12 @@
 		function updateBackground(scale, xOffset, yOffset) {
 			const backgroundImage = document.getElementById('background-image');
 			
-			
+			if (typeof countdownRunning !== 'undefined' && countdownRunning) {
+				backgroundImage.style.opacity = 0;
+				backgroundImage.classList.remove('start-animation-background', 'animated-background');
+				return;
+			}
+
 			// Cambiar imagen de fondo
 			//backgroundContainer.style.backgroundImage = `url(assets/latestRelease/limitless skies fondo.png)`;
 			
@@ -2804,11 +2840,11 @@
 			const content = document.createElement("div");
 			content.classList.add("timeline-content");
 		
-			// Calcular los datos de la página actual
-			const startIndex = currentPage * maxPointsPerPage;
-			const endIndex = Math.min(data.length, startIndex + maxPointsPerPage);
-			const pageData = data.slice(startIndex, endIndex);
-			const centerIndex = (pageData.length - 1) / 2; // Centro de los datos de la página actual
+			const pages = paginateData(data);
+			const totalPages = pages.length;
+			if (currentPage >= totalPages) currentPage = Math.max(0, totalPages - 1);
+			const pageData = pages[currentPage] || [];
+			const centerIndex = (pageData.length - 1) / 2; 
 
 			// Si hay más de un punto, agregar la línea con animación
 			if (data.length > 1) {
@@ -2851,7 +2887,7 @@
 			container.appendChild(content);
 		
 			// Crear la flecha derecha
-			if (endIndex < data.length) {
+			if (currentPage < totalPages - 1) {
 				const rightArrow = document.createElement("div");
 				rightArrow.classList.add("timeline-arrow", "timeline-arrow-right");
 				rightArrow.innerHTML = `
@@ -3107,14 +3143,12 @@
 			const backgroundImage = document.getElementById('background-image');
 			function updateCountdown() {
 				const nowUTC = Date.now();
-				const targetDateUTC = Date.UTC(2024, 11, 28, 23, 0, 0); // 2024-12-29 00:00:00 en UTC+1
-				// Ajustar manualmente para UTC+1
-				//const targetDate = new Date('2024-12-29T00:00:00'); // Cambia esta fecha según sea necesario
 
 				const difference = targetDateUTC - nowUTC;
 	
 				if (difference < 0) {
 					//countdownElement.textContent = "00:00:00:00";
+					countdownRunning = false;
 					countdownElement.innerHTML = `
 						<img class="countdown-image" src="${logoImgURL}"/>
 					`;
@@ -3125,6 +3159,10 @@
 				const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
 				const minutes = Math.floor((difference / (1000 * 60)) % 60);
 				const seconds = Math.floor((difference / 1000) % 60);
+
+				countdownRunning = true;
+				backgroundImage.style.opacity = 0;
+				backgroundImage.classList.remove('start-animation-background', 'animated-background');
 	
 				countdownElement.textContent = `${days.toString().padStart(2, '0')}:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 				return true;
@@ -3181,32 +3219,36 @@
 					intervalId = setInterval(()=>{
 						if(!updateCountdown()){
 							clearInterval(intervalId);
+							//backgroundImage.classList.add("start-animation-background");
 						}
 					}, 500); // Actualiza cada segundo
 					setTimeout(() => {
-						backgroundImage.classList.add("start-animation-background");
+						if (!updateCountdown()) {
+							backgroundImage.classList.add("start-animation-background");
+						} else {
+							backgroundImage.style.opacity = 0;
+							backgroundImage.classList.remove("start-animation-background", "animated-background");
+						}
+						
+						//backgroundImage.classList.add("start-animation-background");
 						backgroundImage.addEventListener("animationend", () => {
-							// Evento resize para ajustar los límites dinámicamente
 							window.addEventListener('resize', () => {
 								const viewportWidth = window.innerWidth;
 								const viewportHeight = window.innerHeight;
 
-								// Límite inferior dinámico
 								const minXOffset = -viewportWidth / 2.0;
 								const minYOffset = -viewportHeight / 2.0;
 
-								// Desplazamientos máximos para evitar bordes negros
 								const maxXOffset = 0.5 * viewportWidth - 3000;
 								const maxYOffset = 0.5 * viewportHeight - 3000;
 
-								// Recalcular y ajustar los valores actuales de offset
 								const clampedX = Math.min(minXOffset, Math.max(currentXOffset, maxXOffset));
 								const clampedY = Math.min(minYOffset, Math.max(currentYOffset, maxYOffset));
 
-								// Actualizar el fondo con los nuevos valores
 								updateBackground(currentScale, clampedX, clampedY);
 							});
 						}, { once: true });
+
 						timelineContainer.style.opacity = "1";
 						createTimeline(timelineData);
 					}, 4000); // Asegura que el contador se haya mostrado
