@@ -763,6 +763,17 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
     }
 }
 
+#volume-control,
+#reload-control {
+  z-index: 2147483647 !important; 
+  position: fixed !important;    
+}
+
+.countdownContainer {
+  padding-top: calc(env(safe-area-inset-top, 0px) + 3.2rem);
+  box-sizing: border-box;
+}
+
 /* Fin de la animación */
 
 body {
