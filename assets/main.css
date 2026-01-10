@@ -181,9 +181,18 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;*/
-    width: 100vw;
-    height: 100vh;
+    width: 100%;                    /* evita problemas con 100vw + scroll / barras */
+    min-width: 100%;                /* asegura que no quede hueco lateral */
+    box-sizing: border-box;
+    height: 100vh;                  /* fallback para navegadores que no reconocen dvh */
+    height: 100dvh;                 /* preferimos la unidad dinámica cuando esté disponible */
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;               /* evita que se vean los bordes de la web original lateralmente */
+    padding-top: env(safe-area-inset-top, 0px); /* respeta notch / barra superior en móviles */
+    background: #000;
 	flex-direction: column; /* Alinea contador arriba y timeline abajo */
     justify-content: center; /* Contador en la parte superior */
     align-items: center;
@@ -202,6 +211,20 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 	padding-bottom: 5%; /* Espacio para el contador */
 	padding-top: 10%;
 }
+
+/*.countdownContainer {
+  position: fixed !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  top: auto !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}*/
+
+.countdownContainer[data-fixed-top] {
+  max-width: calc(100% - 2rem);
+}
+
 
 .start-animation {
     animation: fadeAndScaleIn 5s forwards cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -761,17 +784,6 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 	.timeline-container {
 		margin-top: 15%;
     }
-}
-
-#volume-control,
-#reload-control {
-  z-index: 2147483647 !important; 
-  position: fixed !important;    
-}
-
-.countdownContainer {
-  padding-top: calc(env(safe-area-inset-top, 0px) + 3.2rem);
-  box-sizing: border-box;
 }
 
 /* Fin de la animación */
