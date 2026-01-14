@@ -2448,7 +2448,7 @@
 
 		const targetDateUTC = Date.UTC(2026, 0, 28, 23, 0, 0); // 2024-12-29 00:00:00 en UTC+1
 
-		const separateLastOnOwnPage = true;
+		const separateLastOnOwnPage = false;
 
 		const logoImgURL = "assets/latestRelease/logoRecortado.png";
 
@@ -2574,6 +2574,20 @@
 				youtube: "https://www.youtube.com/watch?v=O0JgaLK2QOQ&list=OLAK5uy_lMB6cnpzWnC6rcGzFDEBoa4to9AjGmBcc",
 				spotify: "https://open.spotify.com/album/5dhRAXTuymg3Wl8gIciyWi",
 				apple: "https://music.apple.com/us/album/limitless-skies-ep/1785747961",
+				scale: 1,
+				xOffset: -1320,
+				yOffset: -1700,
+				//xOffset: -40,
+				//yOffset: -65.5,
+			},
+			{
+				date: "2025-03-20",
+				name : "Collapsed Palace",
+				image: "assets/latestRelease/Collapsed Palace FINAL.jpg",
+				audio: "assets/latestRelease/CollapsedPalace.mp3",
+				youtube: "https://www.youtube.com/watch?v=C6lXttGfy2k&list=OLAK5uy_lYj3M7rrE9GBUQAeho-7m49bU3y8nOBmo",
+				spotify: "https://open.spotify.com/album/6wekcktAK5U6RH5Sf5vyql",
+				apple: "https://music.apple.com/us/album/collapsed-palace-single/1800674157",
 				scale: 1,
 				xOffset: -1320,
 				yOffset: -1700,
