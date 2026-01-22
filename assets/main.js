@@ -2594,6 +2594,20 @@
 				//xOffset: -40,
 				//yOffset: -65.5,
 			},
+			{
+				date: "2025-07-31",
+				name : "My Anima",
+				image: "assets/latestRelease/My Anima.PNG",
+				audio: "assets/latestRelease/My Anima.mp3",
+				youtube: "https://www.youtube.com/watch?v=3H4nwlDepsY&list=OLAK5uy_lVCl7Njy_PhQwy7In2ux0kHQH553Uokw4",
+				spotify: "https://open.spotify.com/album/4E678nCNsgtIaBVcm3HGgJ",
+				apple: "https://music.apple.com/us/album/my-anima-single/1827407065",
+				scale: 1,
+				xOffset: -1320,
+				yOffset: -1700,
+				//xOffset: -40,
+				//yOffset: -65.5,
+			},
 		];
 
 		let countdownRunning = true;
