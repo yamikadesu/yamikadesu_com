@@ -2613,7 +2613,7 @@
 				name : "We Will Meet Again",
 				image: "assets/latestRelease/We will meet again fondo.PNG",
 				audio: "assets/latestRelease/We Will Meet Again.mp3",
-				youtube: "https://www.youtube.com/playlist?list=OLAK5uy_n8kmDnnAGYfjtvctjl_4hpKMPtW46e_vc",
+				youtube: "https://www.youtube.com/watch?v=5t0BF1Ao-Fw&list=OLAK5uy_n8kmDnnAGYfjtvctjl_4hpKMPtW46e_vc",
 				spotify: "https://open.spotify.com/album/18p7uUpFZSZb0yuQXE6H5p",
 				apple: "https://music.apple.com/us/album/we-will-meet-again/1866155282",
 				scale: 1,
